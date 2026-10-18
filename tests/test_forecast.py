@@ -24,9 +24,9 @@ from emhass.forecast import Forecast
 from emhass.machine_learning_forecaster import MLForecaster
 from emhass.optimization import Optimization
 from emhass.retrieve_hass import RetrieveHass
+from tests.response_fixtures import extract_response_content
 
 from .aiohttp_mock import aioresponses
-from tests.response_fixtures import extract_response_content
 
 # The root folder
 root = pathlib.Path(utils.get_root(__file__, num_parent=2))
