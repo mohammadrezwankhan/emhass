@@ -1443,10 +1443,7 @@ async def treat_runtimeparams(
                     elif runtimeparams.get(association[1], None) is not None:
                         params[association[0]][association[2]] = runtimeparams[association[1]]
         else:
-            logger.warning(
-                "Cant find associations file (associations.csv) in: "
-                + str(emhass_conf["associations_path"])
-            )
+            logger.warning("Cannot find the configured associations file (associations.csv)")
 
         # Special handling for power limit parameters - they can be vectors (Tier 1a)
         def _parse_power_limit(key: str) -> None:
@@ -2788,10 +2785,7 @@ async def build_legacy_config_params(
             content = await data.read()
             associations = list(csv.reader(content.splitlines(), delimiter=","))
     else:
-        logger.error(
-            "Cant find associations file (associations.csv) in: "
-            + str(emhass_conf["associations_path"])
-        )
+        logger.error("Cannot find the configured associations file (associations.csv)")
         return False
 
     # Loop through all parameters in association file
@@ -3187,10 +3181,7 @@ async def build_params(
             content = await data.read()
             associations = list(csv.reader(content.splitlines(), delimiter=","))
     else:
-        logger.error(
-            "Unable to obtain the associations file (associations.csv) in: "
-            + str(emhass_conf["associations_path"])
-        )
+        logger.error("Unable to obtain the configured associations file (associations.csv)")
         return False
 
     # Association file key reference
