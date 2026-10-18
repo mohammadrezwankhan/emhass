@@ -515,7 +515,7 @@ function buildParamElement(
         let selected = ""
         //if item in select is the same as the config value, then append "selected" tag
         if (options==value) {selected = `selected="selected"`}
-        inputs += `<option ${selected}>${options}</option>`;
+        inputs += `<option ${selected}>${escapeHtmlAttribute(options)}</option>`;
       }
       inputs += `</select>`;
       return inputs;
