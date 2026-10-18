@@ -12,6 +12,13 @@ This API provides two main methods:
 
 To train a model use the `regressor-model-fit` end point.
 
+Runtime `csv_file`, `csv_filename`, and `model_type` file names must stay within
+the configured data directory. Relative subdirectories are supported; absolute
+paths, parent traversal outside the directory, and symlinks leading outside it
+are rejected. Keep this directory writable only by trusted local users. Saved
+model pickle files must come from a trusted source; path validation does not make
+an untrusted pickle safe to load.
+
 Some parameters can be optionally defined at runtime:
 
 - `csv_file`: The name of the csv file containing your data.

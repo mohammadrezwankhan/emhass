@@ -429,6 +429,16 @@ function buildParamContainers(
   }
 }
 
+//Encode configuration values before inserting them into HTML text or quoted attributes.
+function escapeConfigHTML(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 //create html input element/s for a param container (called by buildParamContainers)
 function buildParamElement(
   parameter_definition_object,
@@ -506,7 +516,7 @@ function buildParamElement(
         let selected = ""
         //if item in select is the same as the config value, then append "selected" tag
         if (options==value) {selected = `selected="selected"`}
-        inputs += `<option ${selected}>${options}</option>`;
+        inputs += `<option ${selected}>${escapeConfigHTML(options)}</option>`;
       }
       inputs += `</select>`;
       return inputs;
@@ -515,7 +525,7 @@ function buildParamElement(
     else {
       return `
           ${type_specific_html}
-          <input class="param_input" type="${type}" placeholder=${parameter_definition_object["default_value"]} value=${value} >
+          <input class="param_input" type="${type}" placeholder="${escapeConfigHTML(parameter_definition_object["default_value"])}" value="${escapeConfigHTML(value)}" >
           ${type_specific_html_end}
           `;
     }
@@ -526,22 +536,22 @@ function buildParamElement(
     if (value === null) {
       return `
           ${type_specific_html}
-          <input class="param_input" type="${type}" placeholder="${placeholder}" value="">
+          <input class="param_input" type="${type}" placeholder="${escapeConfigHTML(placeholder)}" value="">
           ${type_specific_html_end}
           `;
     }
     // The nested-object path below is designed only for load_peak_hour_periods.
     if (parameter_definition_object["input"] === "object") {
-      return `<input class="param_input" type="text" placeholder="${placeholder}" value="${JSON.stringify(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;')}">`;
+      return `<input class="param_input" type="text" placeholder="${escapeConfigHTML(placeholder)}" value="${escapeConfigHTML(JSON.stringify(value))}">`;
     }
     //for items such as load_peak_hour_periods (object of objects with arrays)
     // exclude null: typeof null === "object" is a JS gotcha — null elements must fall to the array branch
     if (typeof Object.values(value)[0] === "object" && Object.values(value)[0] !== null) {
       for (let param of Object.values(value)) {
         for (let items of Object.values(param)) {
-          inputs += `<input class="param_input" type="${type}" placeholder=${Object.values(items)[0]} value=${
+          inputs += `<input class="param_input" type="${type}" placeholder="${escapeConfigHTML(Object.values(items)[0])}" value="${escapeConfigHTML(
             Object.values(items)[0]
-          }>`;
+          )}">`;
         }
         inputs += `</br>`;
       }
@@ -553,7 +563,7 @@ function buildParamElement(
       for (let param of value) {
         inputs += `
           ${type_specific_html}
-          <input class="param_input" type="${type}" placeholder=${parameter_definition_object["default_value"]} value=${param}>
+          <input class="param_input" type="${type}" placeholder="${escapeConfigHTML(parameter_definition_object["default_value"])}" value="${escapeConfigHTML(param)}">
           ${type_specific_html_end}
           `;
       }

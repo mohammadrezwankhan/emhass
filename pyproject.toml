@@ -38,7 +38,7 @@ dependencies = [
     "aiofiles",
     "jinja2",
     "asyncio",
-    "aiohttp",
+    "aiohttp>=3.14.3,<4",
     "orjson",
     "websockets",
     "uvicorn==0.30.6",
@@ -55,12 +55,9 @@ test = [
     "ruff",
     "tabulate",
     "hatchling",
-    "aioresponses",
-    # aioresponses 0.7.8 (latest) builds an aiohttp ClientResponse without the
-    # stream_writer argument that aiohttp>=3.13 made required, so the mock-based
-    # tests fail under aiohttp 3.13+. Cap aiohttp here (test extra only) until
-    # aioresponses ships 3.13 support; production installs stay unpinned.
-    "aiohttp<3.13",
+    # tests/aiohttp_mock.py adapts response construction and buffered-body flow
+    # control. Remove it when upstream supports aiohttp 3.14 (upstream #289).
+    "aioresponses==0.7.9",
 ]
 dev = ["ruff"]
 

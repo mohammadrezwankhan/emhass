@@ -202,9 +202,11 @@ def js_src() -> str:
 
 @pytest.fixture(scope="module")
 def _build_param_fns(js_src: str) -> tuple[str, str]:
-    """Extracted checkConfigParam + buildParamElement sources, shared across Node replay tests."""
+    """Extract renderer helpers and buildParamElement for Node replay tests."""
     return (
-        _extract_function_src(js_src, "checkConfigParam"),
+        _extract_function_src(js_src, "checkConfigParam")
+        + "\n"
+        + _extract_function_src(js_src, "escapeConfigHTML"),
         _extract_function_src(js_src, "buildParamElement"),
     )
 
@@ -410,7 +412,7 @@ if (!m) {{
   process.stderr.write('FAIL: no double-quoted value= attribute in: ' + JSON.stringify(html) + '\\n');
   process.exit(1);
 }}
-const decoded = m[1].replaceAll('&quot;', '"');
+const decoded = m[1].replaceAll('&quot;', '"').replaceAll('&#39;', "'");
 let parsed;
 try {{ parsed = JSON.parse(decoded); }} catch (e) {{
   process.stderr.write('FAIL: value attr does not round-trip via JSON.parse: ' + e + '\\n');
@@ -544,9 +546,10 @@ if (!m) {{
 }}
 const decoded = m[1]
   .replaceAll('&quot;', '"')
-  .replaceAll('&amp;', '&')
+  .replaceAll('&#39;', "'")
   .replaceAll('&lt;', '<')
-  .replaceAll('&gt;', '>');
+  .replaceAll('&gt;', '>')
+  .replaceAll('&amp;', '&');
 let parsed;
 try {{ parsed = JSON.parse(decoded); }} catch (e) {{
   process.stderr.write('FAIL: value attr does not round-trip via JSON.parse: ' + e + '\\n');

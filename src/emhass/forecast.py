@@ -45,7 +45,7 @@ from sklearn.model_selection import GridSearchCV, TimeSeriesSplit
 from emhass.machine_learning_forecaster import MLForecaster
 from emhass.machine_learning_regressor import MLRegressor
 from emhass.retrieve_hass import RetrieveHass
-from emhass.utils import add_date_features, get_days_list, set_df_index_freq
+from emhass.utils import add_date_features, get_days_list, resolve_data_file, set_df_index_freq
 
 header_accept = "application/json"
 error_msg_list_not_long_enough = "Passed data from passed list is not long enough"
@@ -1955,7 +1955,7 @@ class Forecast:
         """Helper for ML forecast."""
         model_type = self.params["passed_data"]["model_type"]
         filename = model_type + "_mlf.pkl"
-        filename_path = self.emhass_conf["data_path"] / filename
+        filename_path = resolve_data_file(self.emhass_conf["data_path"], filename)
         if not debug:
             if filename_path.is_file():
                 async with aiofiles.open(filename_path, "rb") as inp:

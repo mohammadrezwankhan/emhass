@@ -15,7 +15,6 @@ import aiohttp
 import numpy as np
 import orjson
 import pandas as pd
-from aioresponses import aioresponses
 
 from emhass import forecast as forecast_module
 from emhass import utils
@@ -24,6 +23,8 @@ from emhass.forecast import Forecast
 from emhass.machine_learning_forecaster import MLForecaster
 from emhass.optimization import Optimization
 from emhass.retrieve_hass import RetrieveHass
+from tests.aiohttp_mock import aioresponses
+from tests.response_fixtures import extract_response_content
 
 # The root folder
 root = pathlib.Path(utils.get_root(__file__, num_parent=2))
@@ -596,9 +597,7 @@ class TestForecast(unittest.IsolatedAsyncioTestCase):
         async with aiofiles.open(test_data_path, "rb") as f:
             compressed = await f.read()
 
-        data = bz2.decompress(compressed)
-        data = cPickle.loads(data)
-        data = orjson.loads(data.content)
+        data = orjson.loads(extract_response_content(compressed))
 
         get_url = "https://api.solcast.com.au/rooftop_sites/123456/forecasts?hours=24"
 
@@ -648,9 +647,7 @@ class TestForecast(unittest.IsolatedAsyncioTestCase):
         async with aiofiles.open(test_data_path, "rb") as f:
             compressed = await f.read()
 
-        data = bz2.decompress(compressed)
-        data = cPickle.loads(data)
-        data = orjson.loads(data.content)
+        data = orjson.loads(extract_response_content(compressed))
         with aioresponses() as mocked:
             for roof_id in roof_ids:
                 get_url = f"https://api.solcast.com.au/rooftop_sites/{roof_id}/forecasts?hours=24"
@@ -708,9 +705,7 @@ class TestForecast(unittest.IsolatedAsyncioTestCase):
         test_data_path = str(emhass_conf["data_path"] / "test_response_solcast_get_method.pbz2")
         async with aiofiles.open(test_data_path, "rb") as f:
             compressed = await f.read()
-        data = bz2.decompress(compressed)
-        data = cPickle.loads(data)
-        data = orjson.loads(data.content)
+        data = orjson.loads(extract_response_content(compressed))
 
         days_solcast = int(len(self.fcst.forecast_dates) * self.fcst.freq.seconds / 3600)
         get_url = f"https://api.solcast.com.au/rooftop_sites/123456/forecasts?hours={days_solcast}"
@@ -938,7 +933,7 @@ class TestForecast(unittest.IsolatedAsyncioTestCase):
         test_data_path = str(emhass_conf["data_path"] / "test_response_solcast_get_method.pbz2")
         async with aiofiles.open(test_data_path, "rb") as f:
             compressed = await f.read()
-        payload = orjson.loads(cPickle.loads(bz2.decompress(compressed)).content)
+        payload = orjson.loads(extract_response_content(compressed))
 
         try:
             with (

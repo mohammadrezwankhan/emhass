@@ -1,6 +1,4 @@
-import _pickle as cPickle
 import asyncio
-import bz2
 import copy
 import datetime
 import os
@@ -14,11 +12,12 @@ import aiofiles
 import numpy as np
 import orjson
 import pandas as pd
-from aioresponses import aioresponses
 
 from emhass import utils
 from emhass.retrieve_hass import RetrieveHass
 from emhass.utils import get_days_list, get_logger, get_yaml_parse
+from tests.aiohttp_mock import aioresponses
+from tests.response_fixtures import extract_response_content
 
 # The root folder
 root = pathlib.Path(utils.get_root(__file__, num_parent=2))
@@ -203,9 +202,7 @@ class TestRetrieveHass(unittest.IsolatedAsyncioTestCase):
             async with aiofiles.open(test_data_path, "rb") as f:
                 compressed = await f.read()
 
-            data = bz2.decompress(compressed)
-            data = cPickle.loads(data)
-            data = orjson.loads(data.content)
+            data = orjson.loads(extract_response_content(compressed))
             days_list = get_days_list(1)
             var_list = [self.retrieve_hass_conf["sensor_power_load_no_var_loads"]]
             # with aioresponses() as mocked:

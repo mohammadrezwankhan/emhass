@@ -982,6 +982,8 @@ class RetrieveHass:
 
     def _discover_entity_measurement(self, client, entity_id: str) -> str:
         """Auto-discover which measurement contains the given entity."""
+        from influxdb.line_protocol import quote_ident
+
         # Check cache first
         if entity_id in self._measurement_cache:
             return self._measurement_cache[entity_id]
@@ -1009,7 +1011,7 @@ class RetrieveHass:
 
                 try:
                     # Use SHOW TAG VALUES to get all entity_ids in this measurement
-                    tag_query = f'SHOW TAG VALUES FROM "{measurement}" WITH KEY = "entity_id"'
+                    tag_query = f'SHOW TAG VALUES FROM {quote_ident(measurement)} WITH KEY = "entity_id"'
                     self.logger.debug(
                         f"Checking measurement '{measurement}' with tag query: {tag_query}"
                     )
@@ -1045,6 +1047,8 @@ class RetrieveHass:
         self, entity_id: str, measurement: str, start_time, end_time
     ) -> str:
         """Build InfluxQL query for specific measurement and entity."""
+        from influxdb.line_protocol import quote_ident, quote_literal
+
         # Convert frequency to InfluxDB interval
         freq_minutes = int(self.freq.total_seconds() / 60)
         interval = f"{freq_minutes}m"
@@ -1056,10 +1060,10 @@ class RetrieveHass:
         # Use FILL(previous) instead of FILL(linear) for compatibility with open-source InfluxDB
         query = f"""
         SELECT mean("value") AS "mean_value"
-        FROM "{self.influxdb_database}"."{self.influxdb_retention_policy}"."{measurement}"
+        FROM {quote_ident(self.influxdb_database)}.{quote_ident(self.influxdb_retention_policy)}.{quote_ident(measurement)}
         WHERE time >= '{start_time_str}'
         AND time < '{end_time_str}'
-        AND "entity_id"='{entity_id}'
+        AND "entity_id"={quote_literal(entity_id)}
         GROUP BY time({interval}) FILL(previous)
         """
         return query

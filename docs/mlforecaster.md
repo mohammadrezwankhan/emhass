@@ -26,6 +26,11 @@ The minimum number of `historic_days_to_retrieve` is hard coded to 9 by default.
 
 - `model_type`: define the type of model forecast that this will be used for. For example: `load_forecast`. This should be a unique name if you are using multiple custom forecast models.
 
+  Model files must remain inside the configured data directory. Relative
+  subdirectories are allowed, but absolute paths, parent traversal outside that
+  directory, and symlinks that escape it are rejected. Load only trusted model
+  pickle files and restrict local write access to the data directory.
+
 - `var_model`: the name of the sensor to retrieve data from Home Assistant. Example: `sensor.power_load_no_var_loads`.
 
 - `sklearn_model`: the `scikit-learn` model that will be used. These options are possible: `LinearRegression`, `RidgeRegression`, `LassoRegression`, `ElasticNet`, `KNeighborsRegressor`, `DecisionTreeRegressor`, `SVR`, `RandomForestRegressor`, `ExtraTreesRegressor`, `GradientBoostingRegressor`, `AdaBoostRegressor`, `MLPRegressor`.
