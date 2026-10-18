@@ -24,6 +24,7 @@ from emhass.forecast import Forecast
 from emhass.machine_learning_forecaster import MLForecaster
 from emhass.optimization import Optimization
 from emhass.retrieve_hass import RetrieveHass
+from tests.response_fixtures import extract_response_content
 
 from .aiohttp_mock import aioresponses
 
@@ -614,9 +615,7 @@ class TestForecast(unittest.IsolatedAsyncioTestCase):
         async with aiofiles.open(test_data_path, "rb") as f:
             compressed = await f.read()
 
-        data = bz2.decompress(compressed)
-        data = cPickle.loads(data)
-        data = orjson.loads(data.content)
+        data = orjson.loads(extract_response_content(compressed))
 
         get_url = "https://api.solcast.com.au/rooftop_sites/123456/forecasts?hours=24"
 
@@ -669,9 +668,7 @@ class TestForecast(unittest.IsolatedAsyncioTestCase):
         async with aiofiles.open(test_data_path, "rb") as f:
             compressed = await f.read()
 
-        data = bz2.decompress(compressed)
-        data = cPickle.loads(data)
-        data = orjson.loads(data.content)
+        data = orjson.loads(extract_response_content(compressed))
         with (
             unittest.mock.patch.object(self.fcst, "_solcast_rate_limit_ok", return_value=True),
             aioresponses() as mocked,
@@ -732,9 +729,7 @@ class TestForecast(unittest.IsolatedAsyncioTestCase):
         test_data_path = str(emhass_conf["data_path"] / "test_response_solcast_get_method.pbz2")
         async with aiofiles.open(test_data_path, "rb") as f:
             compressed = await f.read()
-        data = bz2.decompress(compressed)
-        data = cPickle.loads(data)
-        data = orjson.loads(data.content)
+        data = orjson.loads(extract_response_content(compressed))
 
         days_solcast = int(len(self.fcst.forecast_dates) * self.fcst.freq.seconds / 3600)
         get_url = f"https://api.solcast.com.au/rooftop_sites/123456/forecasts?hours={days_solcast}"
@@ -965,7 +960,7 @@ class TestForecast(unittest.IsolatedAsyncioTestCase):
         test_data_path = str(emhass_conf["data_path"] / "test_response_solcast_get_method.pbz2")
         async with aiofiles.open(test_data_path, "rb") as f:
             compressed = await f.read()
-        payload = orjson.loads(cPickle.loads(bz2.decompress(compressed)).content)
+        payload = orjson.loads(extract_response_content(compressed))
 
         try:
             with (

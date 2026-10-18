@@ -11,6 +11,7 @@ import time
 from collections.abc import Sequence
 from contextlib import contextmanager
 from datetime import UTC, datetime, timedelta
+from html import escape
 from typing import TYPE_CHECKING
 
 import aiofiles
@@ -1442,10 +1443,7 @@ async def treat_runtimeparams(
                     elif runtimeparams.get(association[1], None) is not None:
                         params[association[0]][association[2]] = runtimeparams[association[1]]
         else:
-            logger.warning(
-                "Cant find associations file (associations.csv) in: "
-                + str(emhass_conf["associations_path"])
-            )
+            logger.warning("Cannot find the configured associations file (associations.csv)")
 
         # Special handling for power limit parameters - they can be vectors (Tier 1a)
         def _parse_power_limit(key: str) -> None:
@@ -2610,10 +2608,10 @@ def get_injection_dict_forecast_model_fit(df_fit_pred: pd.DataFrame, mlf: MLFore
     injection_dict["title"] = "<h2>Custom machine learning forecast model fit</h2>"
     injection_dict["subsubtitle0"] = (
         "<h4>Plotting train/test forecast model results for "
-        + mlf.model_type
+        + escape(str(mlf.model_type))
         + "<br>"
         + "Forecasting variable "
-        + mlf.var_model
+        + escape(str(mlf.var_model))
         + "</h4>"
     )
     injection_dict["figure_0"] = image_path_0
@@ -2674,10 +2672,10 @@ def get_injection_dict_forecast_model_tune(df_pred_optim: pd.DataFrame, mlf: MLF
     injection_dict["title"] = "<h2>Custom machine learning forecast model tune</h2>"
     injection_dict["subsubtitle0"] = (
         "<h4>Performed a tuning routine using bayesian optimization for "
-        + mlf.model_type
+        + escape(str(mlf.model_type))
         + "<br>"
         + "Forecasting variable "
-        + mlf.var_model
+        + escape(str(mlf.var_model))
         + "</h4>"
     )
     injection_dict["figure_0"] = image_path_0
@@ -2787,10 +2785,7 @@ async def build_legacy_config_params(
             content = await data.read()
             associations = list(csv.reader(content.splitlines(), delimiter=","))
     else:
-        logger.error(
-            "Cant find associations file (associations.csv) in: "
-            + str(emhass_conf["associations_path"])
-        )
+        logger.error("Cannot find the configured associations file (associations.csv)")
         return False
 
     # Loop through all parameters in association file
@@ -3186,10 +3181,7 @@ async def build_params(
             content = await data.read()
             associations = list(csv.reader(content.splitlines(), delimiter=","))
     else:
-        logger.error(
-            "Unable to obtain the associations file (associations.csv) in: "
-            + str(emhass_conf["associations_path"])
-        )
+        logger.error("Unable to obtain the configured associations file (associations.csv)")
         return False
 
     # Association file key reference
