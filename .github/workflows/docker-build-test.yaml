@@ -41,19 +41,18 @@ jobs:
             TARGETARCH=${{ matrix.platform.target_arch }}
             os_version=${{ matrix.platform.os_version }}
           load: true
-      - name: Test Image # Expect startup to reject the missing secrets file.
+      - name: Test Image
+        timeout-minutes: 3
         env:
           EMHASS_IMAGE: ${{ steps.build.outputs.imageid }}
         run: |
-          docker_status=0
-          docker_output=$(docker run --rm "$EMHASS_IMAGE" 2>&1) || docker_status=$?
-          printf '%s\n' "$docker_output"
-          if [ "$docker_status" -eq 0 ] || [ "$docker_status" -ge 125 ] ||
-             ! grep -Fq 'FileNotFoundError' <<< "$docker_output" ||
-             ! grep -Fq 'secrets_emhass.yaml' <<< "$docker_output"; then
-            echo 'Image did not fail with the expected missing secrets file error.'
-            exit 1
-          fi
+          container=$(docker run --detach --env EMHASS_URL=http://127.0.0.1:8123 "$EMHASS_IMAGE")
+          cleanup() {
+            docker logs "$container" || true
+            docker rm --force "$container"
+          }
+          trap cleanup EXIT
+          docker exec -i "$container" /app/.venv/bin/python - < .github/scripts/docker_smoke_probe.py
       # Google OSV-Scanner
       # Extract Debian and Python packadge list stored in Image
       - name: Export Debian package list
