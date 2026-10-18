@@ -48,6 +48,14 @@ INFLUX_EXPRESSION_LOOKBACK = pd.Timedelta(days=1)
 INFLUX_EXPRESSION_MAX_POW_EXPONENT = 1000
 
 
+def _quote_influxql(value: str, quote: str) -> str:
+    """Quote one InfluxQL identifier or string literal, preserving its value."""
+    if not isinstance(value, str) or any(char in value for char in "\r\n\x00"):
+        raise ValueError("InfluxQL names must be strings without line breaks or NUL bytes")
+    escaped = value.replace("\\", "\\\\").replace(quote, "\\" + quote)
+    return quote + escaped + quote
+
+
 class RetrieveHass:
     r"""
     Retrieve data from Home Assistant using the restful API.
@@ -1009,7 +1017,10 @@ class RetrieveHass:
 
                 try:
                     # Use SHOW TAG VALUES to get all entity_ids in this measurement
-                    tag_query = f'SHOW TAG VALUES FROM "{measurement}" WITH KEY = "entity_id"'
+                    measurement_identifier = _quote_influxql(measurement, '"')
+                    tag_query = (
+                        f'SHOW TAG VALUES FROM {measurement_identifier} WITH KEY = "entity_id"'
+                    )
                     self.logger.debug(
                         f"Checking measurement '{measurement}' with tag query: {tag_query}"
                     )
@@ -1052,14 +1063,18 @@ class RetrieveHass:
         # Format times properly for InfluxDB
         start_time_str = start_time.strftime("%Y-%m-%dT%H:%M:%SZ")
         end_time_str = end_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+        database = _quote_influxql(self.influxdb_database, '"')
+        retention_policy = _quote_influxql(self.influxdb_retention_policy, '"')
+        measurement_identifier = _quote_influxql(measurement, '"')
+        entity_literal = _quote_influxql(entity_id, "'")
 
         # Use FILL(previous) instead of FILL(linear) for compatibility with open-source InfluxDB
         query = f"""
         SELECT mean("value") AS "mean_value"
-        FROM "{self.influxdb_database}"."{self.influxdb_retention_policy}"."{measurement}"
+        FROM {database}.{retention_policy}.{measurement_identifier}
         WHERE time >= '{start_time_str}'
         AND time < '{end_time_str}'
-        AND "entity_id"='{entity_id}'
+        AND "entity_id"={entity_literal}
         GROUP BY time({interval}) FILL(previous)
         """
         return query

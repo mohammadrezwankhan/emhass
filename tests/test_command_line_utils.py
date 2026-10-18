@@ -1094,7 +1094,7 @@ class TestCommandLineAsyncUtils(unittest.IsolatedAsyncioTestCase):
         # Add some NaNs to test handle_nan
         df_final_mock.iloc[5:10, 0] = np.nan
         # Mock rh.get_data
-        input_data_dict["rh"].get_data = Mock(return_value=True)
+        input_data_dict["rh"].get_data = AsyncMock(return_value=True)
         input_data_dict["rh"].df_final = df_final_mock
         # Mock the final to_csv call to avoid writing a file
         with patch("pandas.DataFrame.to_csv") as mock_to_csv:
@@ -1135,7 +1135,7 @@ class TestCommandLineAsyncUtils(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(success)
         # Test rh.get_data fails
         input_data_dict["rh"].use_influxdb = True  # Reset from test 2
-        input_data_dict["rh"].get_data = Mock(return_value=False)  # Mock get_data to fail
+        input_data_dict["rh"].get_data = AsyncMock(return_value=False)  # Mock get_data to fail
         input_data_dict["rh"].df_final = None
         success = await export_influxdb_to_csv(input_data_dict, logger)
         self.assertFalse(success)
@@ -1884,7 +1884,12 @@ class TestCommandLineAsyncUtils(unittest.IsolatedAsyncioTestCase):
         res = await _prepare_dayahead_optim(ctx)
         self.assertIsNone(res, "Should return None if weather forecast fails")
 
-    async def test_thermal_config_runtime_overrides(self):
+    @patch(
+        "emhass.forecast.Forecast.get_cached_open_meteo_forecast_json",
+        new_callable=AsyncMock,
+        return_value=None,
+    )
+    async def test_thermal_config_runtime_overrides(self, mock_weather):
         """
         Test that thermal config parameters (def_load_config and heater overrides)
         are correctly processed for non-MPC actions (e.g. dayahead-optim).

@@ -163,7 +163,7 @@ async function formAction(action, page) {
       },
       body: JSON.stringify(data), //note that post can only send data via strings
     });
-    if (response.status == 201) {
+    if (response.ok) {
       showChangeStatus(response.status, {});
       if (page !== "basic") {
         saveStorage(); //save to storage if successful
@@ -191,8 +191,8 @@ async function showChangeStatus(status, logJson) {
     //show loading logo
     loading.innerHTML = "";
     loading.classList.add("loading"); //append class with loading animation styling
-  } else if (status === 201) {
-    //if status is 201, then show a tick
+  } else if (status >= 200 && status < 300) {
+    //show a tick for successful action responses, including HTTP 200
     loading.classList.remove("loading");
     loading.innerHTML = `<p class=tick>&#x2713;</p>`;
     getTemplate(); //get updated templates

@@ -26,6 +26,11 @@ The minimum number of `historic_days_to_retrieve` is hard coded to 9 by default.
 
 - `model_type`: define the type of model forecast that this will be used for. For example: `load_forecast`. This should be a unique name if you are using multiple custom forecast models.
 
+Saved models stay inside the configured EMHASS data directory. Model names may
+include relative subdirectories, but absolute paths and paths or symlinks that
+leave the data directory are rejected. Only load model files created by trusted
+operators; Python model files are not an interchange format for untrusted uploads.
+
 - `var_model`: the name of the sensor to retrieve data from Home Assistant. Example: `sensor.power_load_no_var_loads`.
 
 - `sklearn_model`: the `scikit-learn` model that will be used. These options are possible: `LinearRegression`, `RidgeRegression`, `LassoRegression`, `ElasticNet`, `KNeighborsRegressor`, `DecisionTreeRegressor`, `SVR`, `RandomForestRegressor`, `ExtraTreesRegressor`, `GradientBoostingRegressor`, `AdaBoostRegressor`, `MLPRegressor`.

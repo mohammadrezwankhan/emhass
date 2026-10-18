@@ -435,6 +435,15 @@ function buildParamElement(
   parameter_definition_name,
   config
 ) {
+  //Keep saved configuration and placeholders as literal double-quoted attributes.
+  function escapeHtmlAttribute(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;");
+  }
+
   let type = "";
   let inputs = "";
   let type_specific_html = "";
@@ -515,7 +524,7 @@ function buildParamElement(
     else {
       return `
           ${type_specific_html}
-          <input class="param_input" type="${type}" placeholder=${parameter_definition_object["default_value"]} value=${value} >
+          <input class="param_input" type="${type}" placeholder="${escapeHtmlAttribute(parameter_definition_object["default_value"])}" value="${escapeHtmlAttribute(value)}" >
           ${type_specific_html_end}
           `;
     }
@@ -526,22 +535,22 @@ function buildParamElement(
     if (value === null) {
       return `
           ${type_specific_html}
-          <input class="param_input" type="${type}" placeholder="${placeholder}" value="">
+          <input class="param_input" type="${type}" placeholder="${escapeHtmlAttribute(placeholder)}" value="">
           ${type_specific_html_end}
           `;
     }
     // The nested-object path below is designed only for load_peak_hour_periods.
     if (parameter_definition_object["input"] === "object") {
-      return `<input class="param_input" type="text" placeholder="${placeholder}" value="${JSON.stringify(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;')}">`;
+      return `<input class="param_input" type="text" placeholder="${escapeHtmlAttribute(placeholder)}" value="${escapeHtmlAttribute(JSON.stringify(value))}">`;
     }
     //for items such as load_peak_hour_periods (object of objects with arrays)
     // exclude null: typeof null === "object" is a JS gotcha — null elements must fall to the array branch
     if (typeof Object.values(value)[0] === "object" && Object.values(value)[0] !== null) {
       for (let param of Object.values(value)) {
         for (let items of Object.values(param)) {
-          inputs += `<input class="param_input" type="${type}" placeholder=${Object.values(items)[0]} value=${
-            Object.values(items)[0]
-          }>`;
+          inputs += `<input class="param_input" type="${type}" placeholder="${escapeHtmlAttribute(Object.values(items)[0])}" value="${
+            escapeHtmlAttribute(Object.values(items)[0])
+          }">`;
         }
         inputs += `</br>`;
       }
@@ -553,7 +562,7 @@ function buildParamElement(
       for (let param of value) {
         inputs += `
           ${type_specific_html}
-          <input class="param_input" type="${type}" placeholder=${parameter_definition_object["default_value"]} value=${param}>
+          <input class="param_input" type="${type}" placeholder="${escapeHtmlAttribute(parameter_definition_object["default_value"])}" value="${escapeHtmlAttribute(param)}">
           ${type_specific_html_end}
           `;
       }

@@ -22,6 +22,11 @@ Some parameters can be optionally defined at runtime:
 
 - `model_type`: Define the name of the model regressor that this will be used for. For example: `heating_hours_degreeday`. This should be a unique name if you are using multiple custom regressor models.
 
+`csv_file` and saved model names are resolved inside the configured EMHASS data directory.
+Relative subdirectories are supported. Absolute paths, paths that leave this directory,
+and symlinks that point outside it are rejected. Keep this directory writable only by
+trusted operators: saved Python model files must come from a trusted EMHASS installation.
+
 - `regression_model`: The regression model that will be used. These options are possible: `LinearRegression`, `RidgeRegression`, `LassoRegression`, `ElasticNet`, `KNeighborsRegressor`, `DecisionTreeRegressor`, `SVR`, `RandomForestRegressor`, `ExtraTreesRegressor`, `GradientBoostingRegressor`, `AdaBoostRegressor`, `MLPRegressor`.
 
 - `timestamp`: If defined, the column key that has to be used for timestamp.

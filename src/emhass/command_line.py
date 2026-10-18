@@ -1343,7 +1343,7 @@ async def _prepare_ml_fit_predict(ctx: SetupContext):
     var_model = ctx.params["passed_data"]["var_model"]
     if ctx.get_data_from_file:
         filename = model_type + ".pkl"
-        filename_path = ctx.emhass_conf["data_path"] / filename
+        filename_path = utils.resolve_data_file(ctx.emhass_conf["data_path"], filename)
         async with aiofiles.open(filename_path, "rb") as inp:
             content = await inp.read()
             df_input_data, _, _, _ = pickle.loads(content)
@@ -1371,11 +1371,7 @@ def _prepare_regressor_fit(ctx: SetupContext):
     if not csv_file:
         ctx.logger.error("csv_file is required for regressor actions but was not provided.")
         return None
-    if ctx.get_data_from_file:
-        base_path = ctx.emhass_conf["data_path"]
-        filename_path = pathlib.Path(base_path) / csv_file
-    else:
-        filename_path = ctx.emhass_conf["data_path"] / csv_file
+    filename_path = utils.resolve_data_file(ctx.emhass_conf["data_path"], csv_file)
     if filename_path.is_file():
         df_input_data = pd.read_csv(filename_path, parse_dates=True)
     else:
@@ -2180,7 +2176,9 @@ async def forecast_model_fit(
     # Save model
     if not debug:
         filename = model_type + default_pkl_suffix
-        filename_path = input_data_dict["emhass_conf"]["data_path"] / filename
+        filename_path = utils.resolve_data_file(
+            input_data_dict["emhass_conf"]["data_path"], filename
+        )
         async with aiofiles.open(filename_path, "wb") as outp:
             await outp.write(pickle.dumps(mlf, pickle.HIGHEST_PROTOCOL))
             logger.debug("saved model to " + str(filename_path))
@@ -2286,7 +2284,7 @@ async def forecast_model_predict(
     # Load model
     model_type = input_data_dict["params"]["passed_data"]["model_type"]
     filename = model_type + default_pkl_suffix
-    filename_path = input_data_dict["emhass_conf"]["data_path"] / filename
+    filename_path = utils.resolve_data_file(input_data_dict["emhass_conf"]["data_path"], filename)
     if not debug:
         if filename_path.is_file():
             async with aiofiles.open(filename_path, "rb") as inp:
@@ -2372,7 +2370,7 @@ async def forecast_model_tune(
     # Load model
     model_type = input_data_dict["params"]["passed_data"]["model_type"]
     filename = model_type + default_pkl_suffix
-    filename_path = input_data_dict["emhass_conf"]["data_path"] / filename
+    filename_path = utils.resolve_data_file(input_data_dict["emhass_conf"]["data_path"], filename)
     if not debug:
         if filename_path.is_file():
             async with aiofiles.open(filename_path, "rb") as inp:
@@ -2398,7 +2396,9 @@ async def forecast_model_tune(
     # Save model
     if not debug:
         filename = model_type + default_pkl_suffix
-        filename_path = input_data_dict["emhass_conf"]["data_path"] / filename
+        filename_path = utils.resolve_data_file(
+            input_data_dict["emhass_conf"]["data_path"], filename
+        )
         async with aiofiles.open(filename_path, "wb") as outp:
             await outp.write(pickle.dumps(mlf, pickle.HIGHEST_PROTOCOL))
             logger.debug("Saved model to " + str(filename_path))
@@ -2457,7 +2457,9 @@ async def regressor_model_fit(
     # Save model
     if not debug:
         filename = model_type + "_mlr.pkl"
-        filename_path = input_data_dict["emhass_conf"]["data_path"] / filename
+        filename_path = utils.resolve_data_file(
+            input_data_dict["emhass_conf"]["data_path"], filename
+        )
         async with aiofiles.open(filename_path, "wb") as outp:
             await outp.write(pickle.dumps(mlr, pickle.HIGHEST_PROTOCOL))
     return mlr
@@ -2484,7 +2486,7 @@ async def regressor_model_predict(
         logger.error("parameter: 'model_type' not passed")
         return False
     filename = model_type + "_mlr.pkl"
-    filename_path = input_data_dict["emhass_conf"]["data_path"] / filename
+    filename_path = utils.resolve_data_file(input_data_dict["emhass_conf"]["data_path"], filename)
     if not debug:
         if filename_path.is_file():
             async with aiofiles.open(filename_path, "rb") as inp:
@@ -2618,6 +2620,7 @@ async def export_influxdb_to_csv(
         logger.error("parameter: 'csv_filename' not passed")
         return False
     csv_filename = params["passed_data"]["csv_filename"]
+    csv_path = utils.resolve_data_file(data_path, csv_filename)
     if "start_time" not in params.get("passed_data", {}):
         logger.error("parameter: 'start_time' not passed")
         return False
@@ -2648,7 +2651,7 @@ async def export_influxdb_to_csv(
     )
     logger.info(f"Sensors: {sensor_list}")
     # Retrieve data from InfluxDB
-    success = rh.get_data(days_list, sensor_list)
+    success = await rh.get_data(days_list, sensor_list)
     if not success or rh.df_final is None or rh.df_final.empty:
         logger.error("Failed to retrieve data from InfluxDB")
         return False
@@ -2667,7 +2670,6 @@ async def export_influxdb_to_csv(
     numeric_cols = df_export.select_dtypes(include=[np.number]).columns
     df_export[numeric_cols] = df_export[numeric_cols].round(decimal_places)
     # Save to CSV
-    csv_path = pathlib.Path(data_path) / csv_filename
     df_export.to_csv(csv_path, index=False)
     logger.info(f"✓ Successfully exported to {csv_filename}")
     logger.info(f"  Rows: {df_export.shape[0]}")

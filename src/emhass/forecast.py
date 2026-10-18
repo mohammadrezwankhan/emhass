@@ -45,7 +45,7 @@ from sklearn.model_selection import GridSearchCV, TimeSeriesSplit
 from emhass.machine_learning_forecaster import MLForecaster
 from emhass.machine_learning_regressor import MLRegressor
 from emhass.retrieve_hass import RetrieveHass
-from emhass.utils import add_date_features, get_days_list, set_df_index_freq
+from emhass.utils import add_date_features, get_days_list, resolve_data_file, set_df_index_freq
 
 header_accept = "application/json"
 error_msg_list_not_long_enough = "Passed data from passed list is not long enough"
@@ -421,13 +421,15 @@ class Forecast:
 
     async def _get_weather_open_meteo(
         self, w_forecast_cache_path: str, use_legacy_pvlib: bool
-    ) -> pd.DataFrame:
+    ) -> pd.DataFrame | bool:
         """Helper to retrieve weather data from Open-Meteo or cache."""
         if not os.path.isfile(w_forecast_cache_path):
             data_raw = await self.get_cached_open_meteo_forecast_json(
                 self.optim_conf["open_meteo_cache_max_age"],
                 self.optim_conf["delta_forecast_daily"].days,
             )
+            if data_raw is None:
+                return False
             data_15min = pd.DataFrame.from_dict(data_raw["minutely_15"])
             # Date/times in the Open-Meteo JSON are unix timestamps
             data_15min["time"] = pd.to_datetime(data_15min["time"], unit="s", utc=True)
@@ -809,7 +811,7 @@ class Forecast:
                 exc_info=True,
             )
             return data
-        if weather is None:
+        if weather is None or weather is False:
             self.logger.warning(
                 "open-meteo weather fetch returned no data while accompanying the "
                 "passed pv_power_forecast; thermal solar gains are unavailable this run."
@@ -1341,7 +1343,7 @@ class Forecast:
         self.data_adjust_pv = pd.concat(
             [P_PV.rename("actual"), p_pv_forecast.rename("forecast")], axis=1
         ).dropna()
-        
+
         # Exclude curtailed timesteps (issue #1026): measured production during
         # curtailment is deliberately below the achievable PV power. A one-step
         # margin on either side absorbs execution lag between plan and inverter.
@@ -1369,7 +1371,7 @@ class Forecast:
             date_features=["year", "month", "day_of_week", "day_of_year", "day"],
         )
         self.data_adjust_pv = Forecast.add_cyclic_hour_features(self.data_adjust_pv)
-        
+
         self.data_adjust_pv = Forecast.compute_solar_angles(self.data_adjust_pv, self.lat, self.lon)
         # Features (X) and target (y)
         self.x_adjust_pv = self.data_adjust_pv.drop(columns=["actual"])  # Predictors
@@ -1955,7 +1957,7 @@ class Forecast:
         """Helper for ML forecast."""
         model_type = self.params["passed_data"]["model_type"]
         filename = model_type + "_mlf.pkl"
-        filename_path = self.emhass_conf["data_path"] / filename
+        filename_path = resolve_data_file(self.emhass_conf["data_path"], filename)
         if not debug:
             if filename_path.is_file():
                 async with aiofiles.open(filename_path, "rb") as inp:

@@ -40,6 +40,7 @@ from emhass.command_line import (
 )
 from emhass.connection_manager import close_global_connection, get_websocket_client, is_connected
 from emhass.utils import (
+    UnsafeDataPath,
     build_config,
     build_legacy_config_params,
     build_params,
@@ -69,6 +70,12 @@ action_log_str = "action_logs.txt"
 injection_dict_file = "injection_dict.pkl"
 params_file = "params.pkl"
 error_msg_associations_file = "Unable to obtain associations file"
+
+
+@app.errorhandler(UnsafeDataPath)
+async def invalid_data_filename(error):
+    app.logger.error(str(error))
+    return await make_response([str(error)], 400)
 
 
 # Add custom filter for trusted HTML content
