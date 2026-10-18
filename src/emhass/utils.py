@@ -32,6 +32,30 @@ pd.options.plotting.backend = "plotly"
 W_TO_KW = 1000  # Watts to kilowatts conversion factor
 
 
+class UnsafeDataPath(ValueError):
+    """A runtime filename would access a file outside the data directory."""
+
+
+def resolve_data_file(data_path: pathlib.Path, filename: str) -> pathlib.Path:
+    """Resolve a runtime filename within the trusted data directory.
+
+    Relative subdirectories are supported. Absolute paths and symlinks leading
+    outside the directory are rejected before reading or writing the file.
+    """
+    message = "Filename must refer to a file inside the data directory"
+    if not isinstance(filename, str) or not filename or "\x00" in filename:
+        raise UnsafeDataPath(message)
+    relative = pathlib.Path(filename)
+    windows_path = pathlib.PureWindowsPath(filename)
+    if relative.is_absolute() or windows_path.drive or windows_path.root:
+        raise UnsafeDataPath(message)
+    directory = pathlib.Path(data_path).resolve()
+    resolved = (directory / relative).resolve()
+    if resolved == directory or not resolved.is_relative_to(directory):
+        raise UnsafeDataPath(message)
+    return resolved
+
+
 def get_root(file: str, num_parent: int = 3) -> str:
     """
     Get the root absolute path of the working directory.

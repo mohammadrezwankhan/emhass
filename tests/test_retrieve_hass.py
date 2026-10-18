@@ -14,11 +14,12 @@ import aiofiles
 import numpy as np
 import orjson
 import pandas as pd
-from aioresponses import aioresponses
 
 from emhass import utils
 from emhass.retrieve_hass import RetrieveHass
 from emhass.utils import get_days_list, get_logger, get_yaml_parse
+
+from .aiohttp_mock import aioresponses
 
 # The root folder
 root = pathlib.Path(utils.get_root(__file__, num_parent=2))

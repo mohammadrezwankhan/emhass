@@ -22,6 +22,11 @@ Some parameters can be optionally defined at runtime:
 
 - `model_type`: Define the name of the model regressor that this will be used for. For example: `heating_hours_degreeday`. This should be a unique name if you are using multiple custom regressor models.
 
+`csv_file` and saved model names are resolved inside the configured EMHASS data directory.
+Relative subdirectories are supported. Absolute paths, paths that leave this directory,
+and symlinks that point outside it are rejected. Keep this directory writable only by
+trusted operators: saved Python model files must come from a trusted EMHASS installation.
+
 - `regression_model`: The regression model that will be used. These options are possible: `LinearRegression`, `RidgeRegression`, `LassoRegression`, `ElasticNet`, `KNeighborsRegressor`, `DecisionTreeRegressor`, `SVR`, `RandomForestRegressor`, `ExtraTreesRegressor`, `GradientBoostingRegressor`, `AdaBoostRegressor`, `MLPRegressor`.
 
 - `timestamp`: If defined, the column key that has to be used for timestamp.
@@ -37,8 +42,8 @@ runtimeparams = {
     "regression_model": "RandomForestRegression",
     "model_type": "heating_hours_degreeday",
     "timestamp": "timestamp",
-    "date_features": ["month", "day_of_week"]
-    }
+    "date_features": ["month", "day_of_week"],
+}
 ```
 
 A correct `curl` call to launch a model fit can look like this:
@@ -102,7 +107,7 @@ runtimeparams = {
     "mlr_predict_unit_of_measurement": None,
     "mlr_predict_friendly_name": "mlr predictor",
     "new_values": [8.2, 7.23, 2, 6],
-    "model_type": "heating_hours_degreeday"
+    "model_type": "heating_hours_degreeday",
 }
 ```
 
