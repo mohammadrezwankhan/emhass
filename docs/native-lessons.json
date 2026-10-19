@@ -1215,8 +1215,8 @@
       "banner": "docs/visuals/sections/section-03-reproduce.svg",
       "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
       "insert_after_heading": "Run",
-      "heading_line": 44,
-      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv_battery.md#L44",
+      "heading_line": 42,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv_battery.md#L42",
       "reason": "The existing heading 'Run' matches the reproduce / parameters section."
     },
     {
@@ -1248,8 +1248,8 @@
       "banner": "docs/visuals/sections/section-03-reproduce.svg",
       "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
       "insert_after_heading": "Run the optimization",
-      "heading_line": 38,
-      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_no_pv.md#L38",
+      "heading_line": 36,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_no_pv.md#L36",
       "reason": "The existing heading 'Run the optimization' matches the reproduce / parameters section."
     },
     {
@@ -1270,8 +1270,8 @@
       "banner": "docs/visuals/sections/section-05-scope.svg",
       "markdown_relative_banner": "../visuals/sections/section-05-scope.svg",
       "insert_after_heading": "Caveats",
-      "heading_line": 134,
-      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/dhw_walkthrough.md#L134",
+      "heading_line": 132,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/dhw_walkthrough.md#L132",
       "reason": "The existing heading 'Caveats' matches the scope / limitations section."
     },
     {
@@ -1324,10 +1324,10 @@
       "section_title": "Equations / provenance",
       "banner": "docs/visuals/sections/section-02-equations.svg",
       "markdown_relative_banner": "../visuals/sections/section-02-equations.svg",
-      "insert_after_heading": "Note: prediction_horizon is a runtime parameter (passed in the MPC payload),",
-      "heading_line": 20,
-      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/reference_configs.md#L20",
-      "reason": "The existing heading 'Note: prediction_horizon is a runtime parameter (passed in the MPC payload),' matches the equations / provenance section."
+      "insert_after_heading": "Reference Configurations",
+      "heading_line": 1,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/reference_configs.md#L1",
+      "reason": "The existing heading 'Reference Configurations' matches the equations / provenance section."
     },
     {
       "path": "docs/study_cases/mpc.md",
@@ -1368,8 +1368,8 @@
         "banner": "docs/visuals/sections/section-03-reproduce.svg",
         "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
         "insert_after_heading": "Run",
-        "heading_line": 44,
-        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv_battery.md#L44",
+        "heading_line": 42,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv_battery.md#L42",
         "reason": "The existing heading 'Run' matches the reproduce / parameters section."
       },
       {
@@ -1401,8 +1401,8 @@
         "banner": "docs/visuals/sections/section-03-reproduce.svg",
         "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
         "insert_after_heading": "Run the optimization",
-        "heading_line": 38,
-        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_no_pv.md#L38",
+        "heading_line": 36,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_no_pv.md#L36",
         "reason": "The existing heading 'Run the optimization' matches the reproduce / parameters section."
       },
       {
@@ -1423,8 +1423,8 @@
         "banner": "docs/visuals/sections/section-05-scope.svg",
         "markdown_relative_banner": "../visuals/sections/section-05-scope.svg",
         "insert_after_heading": "Caveats",
-        "heading_line": 134,
-        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/dhw_walkthrough.md#L134",
+        "heading_line": 132,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/dhw_walkthrough.md#L132",
         "reason": "The existing heading 'Caveats' matches the scope / limitations section."
       },
       {
@@ -1477,10 +1477,10 @@
         "section_title": "Equations / provenance",
         "banner": "docs/visuals/sections/section-02-equations.svg",
         "markdown_relative_banner": "../visuals/sections/section-02-equations.svg",
-        "insert_after_heading": "Note: prediction_horizon is a runtime parameter (passed in the MPC payload),",
-        "heading_line": 20,
-        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/reference_configs.md#L20",
-        "reason": "The existing heading 'Note: prediction_horizon is a runtime parameter (passed in the MPC payload),' matches the equations / provenance section."
+        "insert_after_heading": "Reference Configurations",
+        "heading_line": 1,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/reference_configs.md#L1",
+        "reason": "The existing heading 'Reference Configurations' matches the equations / provenance section."
       },
       {
         "path": "docs/study_cases/mpc.md",
