@@ -6,6 +6,8 @@ This page collects insights that come from running EMHASS in production over mon
 
 ## 1. Forecast quality dominates parameter tuning
 
+![Section 02 · Equations / provenance](../visuals/sections/section-02-equations.svg)
+
 A common newcomer mistake is to spend hours tuning battery parameters (`battery_minimum_state_of_charge`, `battery_charge_power_max`, `battery_charge_efficiency`, …) while leaving the PV forecast and load forecast at defaults.
 
 The dominant factor in real-world cost-minimization is the **gap between forecasted and actual** PV power, load power, and price. A 10% improvement in PV forecast accuracy typically yields more cost savings than retuning battery parameters from default to "perfect".

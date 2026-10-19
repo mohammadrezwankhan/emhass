@@ -1,5 +1,7 @@
 # Basic system — 5 kWp PV, two deferrable loads
 
+![Section 01 · Question / topology](../visuals/sections/section-01-question.svg)
+
 > **Type:** Tutorial — learning-oriented, follow step by step.
 
 This scenario adds a 5 kWp PV installation to the previous tutorial. No battery yet. We run two optimization modes against this system: a 7-day historical **perfect optimization** (to see what the optimal schedule would have been with hindsight) and a **day-ahead optimization** (the real production case).

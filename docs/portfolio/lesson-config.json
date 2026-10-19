@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "repository": "mohammadrezwankhan/emhass",
+  "display_name": "EMHASS · Contribution Guide",
+  "description": "An attributed EMHASS fork for home-energy optimization research and focused upstream contributions.",
+  "domain": "DOMAIN_A",
+  "theme": {
+    "accent": "#00E5FF",
+    "secondary": "#00E676",
+    "surface": "#0A192F",
+    "glow": "rgba(0, 229, 255, 0.35)",
+    "label": "Energy systems",
+    "short": "Energy"
+  },
+  "repo_type": "application-fork",
+  "source_revision": "da01a0205289823ad4679c28c2f301bcf7e6da71",
+  "source_snapshot_date": "2026-10-19",
+  "repo_url": "https://github.com/mohammadrezwankhan/emhass",
+  "homepage": "https://emhass.readthedocs.io",
+  "upstream": "davidusb-geek/emhass",
+  "lessons": [
+    {
+      "id": "path-01",
+      "title": "Orient to upstream and the documented architecture",
+      "summary": "Read the application introduction, contribution route and agent pipeline map.",
+      "objective": "Understand the fork relationship and the input-preparation, optimization and publication stages.",
+      "checkpoint": "Retain davidusb-geek/emhass ownership and Read the Docs as canonical project guidance; do not connect an explorer to real Home Assistant devices.",
+      "level": "Foundation",
+      "tags": [
+        "foundations",
+        "contribution",
+        "optimization"
+      ],
+      "source_paths": [
+        "README.md",
+        "CONTRIBUTING.md",
+        "AGENTS.md"
+      ],
+      "source_urls": [
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/README.md",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/CONTRIBUTING.md",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/AGENTS.md"
+      ],
+      "parameters": [],
+      "command": null,
+      "native_id": null,
+      "native_route": null,
+      "execution_status": "source-linked guide; no execution by this dashboard"
+    },
+    {
+      "id": "path-02",
+      "title": "Trace a configuration field across its sources",
+      "summary": "Inspect UI definitions, headless defaults and schema-contract tests.",
+      "objective": "Understand documented units and the configuration compatibility contract before proposing a change.",
+      "checkpoint": "optimization_time_step is a duration in minutes; battery capacity is Wh and SOC values are fractions. Do not mutate the protected parameter schema as a visual-only change.",
+      "level": "Foundation",
+      "tags": [
+        "foundations",
+        "contribution",
+        "evidence"
+      ],
+      "source_paths": [
+        "src/emhass/static/data/param_definitions.json",
+        "src/emhass/data/config_defaults.json",
+        "tests/test_schema_contract.py",
+        "AGENTS.md"
+      ],
+      "source_urls": [
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/src/emhass/static/data/param_definitions.json",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/src/emhass/data/config_defaults.json",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/tests/test_schema_contract.py",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/AGENTS.md"
+      ],
+      "parameters": [
+        {
+          "name": "optimization_time_step",
+          "description": "Duration used to resample data and define optimization intervals",
+          "default": 30,
+          "unit": "min",
+          "source_path": "src/emhass/static/data/param_definitions.json",
+          "definition_basis": "documented_or_source_default"
+        },
+        {
+          "name": "set_use_battery",
+          "description": "Whether the optimizer considers battery storage",
+          "default": false,
+          "unit": "boolean",
+          "source_path": "src/emhass/static/data/param_definitions.json",
+          "definition_basis": "documented_or_source_default"
+        },
+        {
+          "name": "battery_nominal_energy_capacity",
+          "description": "Battery stack energy capacity; scalar or per-battery list",
+          "default": 5000,
+          "unit": "Wh",
+          "source_path": "src/emhass/static/data/param_definitions.json",
+          "definition_basis": "documented_or_source_default"
+        },
+        {
+          "name": "battery_minimum_state_of_charge",
+          "description": "Minimum allowed SOC as percentage divided by 100",
+          "default": 0.3,
+          "unit": "fraction",
+          "source_path": "src/emhass/static/data/param_definitions.json",
+          "definition_basis": "documented_or_source_default"
+        }
+      ],
+      "command": null,
+      "native_id": null,
+      "native_route": null,
+      "execution_status": "source-linked guide; no execution by this dashboard"
+    },
+    {
+      "id": "path-03",
+      "title": "Plan a focused regression check",
+      "summary": "Read canonical development setup and the matching schema/runtime tests.",
+      "objective": "Select a documented test route for a narrowly scoped contribution.",
+      "checkpoint": "Respect the declared Python >=3.10,<3.13 range and the upstream invariants. Tests and dependency installation were not run in this audit.",
+      "level": "Applied",
+      "tags": [
+        "application",
+        "contribution",
+        "validation",
+        "evidence"
+      ],
+      "source_paths": [
+        "docs/develop.md",
+        "tests/test_schema_contract.py",
+        "tests/test_runtime_params.py",
+        "pyproject.toml"
+      ],
+      "source_urls": [
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/docs/develop.md",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/tests/test_schema_contract.py",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/tests/test_runtime_params.py",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/pyproject.toml"
+      ],
+      "parameters": [],
+      "command": "pytest tests/",
+      "native_id": null,
+      "native_route": null,
+      "execution_status": "source-linked guide; no execution by this dashboard"
+    },
+    {
+      "id": "path-04",
+      "title": "Review documentation and contribution boundaries",
+      "summary": "Read Sphinx build instructions and upstream rules for behavior changes.",
+      "objective": "Prepare a documentation or contribution patch with the correct scope and evidence.",
+      "checkpoint": "Keep upstream logging/result schemas intact and follow the documented discussion process for behavioral changes; no issue or PR is submitted by the explorer.",
+      "level": "Applied",
+      "tags": [
+        "application",
+        "contribution",
+        "uncertainty"
+      ],
+      "source_paths": [
+        "docs/develop.md",
+        "docs/develop_ai_coders.md",
+        "AGENTS.md",
+        "CONTRIBUTING.md",
+        ".readthedocs.yaml"
+      ],
+      "source_urls": [
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/docs/develop.md",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/docs/develop_ai_coders.md",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/AGENTS.md",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/CONTRIBUTING.md",
+        "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/.readthedocs.yaml"
+      ],
+      "parameters": [],
+      "command": "sphinx-build -b html docs docs/_build",
+      "native_id": null,
+      "native_route": null,
+      "execution_status": "source-linked guide; no execution by this dashboard"
+    }
+  ]
+}

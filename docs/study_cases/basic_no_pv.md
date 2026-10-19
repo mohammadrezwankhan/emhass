@@ -1,5 +1,7 @@
 # Basic system — no PV, two deferrable loads
 
+![Section 01 · Question / topology](../visuals/sections/section-01-question.svg)
+
 > **Type:** Tutorial — learning-oriented, follow step by step.
 
 This is the simplest scenario: no PV installation, two deferrable loads (for example, a water heater and a pool pump). EMHASS schedules when to run each load to minimize cost against the day-ahead electricity price.
@@ -34,6 +36,8 @@ If you are running **standalone Docker** with `config_emhass.yaml`, the same key
 The values for `operating_hours_of_each_deferrable_load` are intentional choices for this scenario; the rest of the parameters keep the defaults from `config_defaults.json`.
 
 ## Run the optimization
+
+![Section 03 · Reproduce / parameters](../visuals/sections/section-03-reproduce.svg)
 
 REST (Add-on or Docker):
 

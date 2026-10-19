@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark">
+<meta name="description" content="Search source-backed native lessons, examples, commands, and scope notes for mohammadrezwankhan/emhass.">
+<title>Emhass · Native lesson catalog</title>
+<style>
+:root{color-scheme:light dark;--bg:#f7fafc;--panel:#fff;--ink:#142333;--muted:#526578;--line:#d8e1ea;--cyan:#007b8b;--green:#08734e;--amber:#8b5200;--violet:#6444a6;--rose:#a91d43;--focus:#005fcc;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}@media(prefers-color-scheme:dark){:root{--bg:#0b111b;--panel:#121c29;--ink:#ecf3f9;--muted:#b2c0ce;--line:#293848;--cyan:#48d9e8;--green:#58d6a1;--amber:#ffc15a;--violet:#b99cff;--rose:#ff8ca4;--focus:#8cc8ff}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink)}a{color:var(--cyan);text-underline-offset:.16em}a:hover{text-decoration-thickness:2px}button,input{font:inherit}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.skip-link{position:absolute;top:-6rem;left:1rem;background:var(--panel);padding:.65rem 1rem;z-index:5}.skip-link:focus{top:1rem}.shell{width:min(1180px,calc(100% - 2rem));margin:auto}.surface-nav{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:center;padding:1rem 0;border-bottom:1px solid var(--line);font-size:.92rem}.surface-nav a[aria-current]{font-weight:700;color:var(--ink)}.hero{padding:2rem 0 1.4rem}h1{font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;margin:.35rem 0 .75rem}h2{font-size:1.55rem;line-height:1.25;margin:1.4rem 0 .8rem}h3{font-size:1.1rem;line-height:1.3;margin:.2rem 0 .55rem}p{margin:.4rem 0}.eyebrow,.source-path,.command-source,.command-label,.revision{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82rem}.eyebrow{letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.lede{max-width:78ch;color:var(--muted)}.revision{overflow-wrap:anywhere}.surface-note{margin:1rem 0;padding:1rem 1.1rem;border-left:5px solid var(--rose);background:var(--panel);border-radius:.35rem}.surface-note strong{color:var(--rose)}.model-figure{margin:1.2rem 0;padding:1rem;background:var(--panel);border:1px solid var(--line);border-radius:.65rem}.model-figure img{display:block;max-width:100%;height:auto;margin:auto}.model-figure figcaption{margin-top:.6rem;color:var(--muted);font-size:.9rem}.section-navigation{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.65rem;padding:1rem 0 1.4rem}.section-link{display:block;border-radius:.65rem;overflow:hidden}.section-link img,.section-banner img{display:block;width:100%;height:auto}.catalog-section{padding:1.4rem 0;border-top:1px solid var(--line);scroll-margin-top:1rem}.catalog-section h2{margin:.75rem 0 1rem}.lesson-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,315px),1fr));gap:.8rem}.lesson-card,.command-card{background:var(--panel);border:1px solid var(--line);border-radius:.7rem;padding:1rem;min-width:0}.lesson-card[hidden]{display:none!important}.card-meta{display:flex;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.78rem;margin-bottom:.5rem}.excerpt{color:var(--muted);font-size:.93rem}.source-path{overflow-wrap:anywhere;color:var(--muted)}.card-links{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin:.6rem 0}.tags{display:flex;flex-wrap:wrap;gap:.35rem}.tag,.filter-chip{border:1px solid var(--line);border-radius:999px;padding:.24rem .58rem;font-size:.78rem;color:var(--muted);background:transparent}.controls{padding:1rem;background:var(--panel);border:1px solid var(--line);border-radius:.7rem;margin:1.4rem 0}.controls label{display:block;font-weight:650;margin-bottom:.4rem}input[type=search]{width:min(100%,620px);padding:.65rem .75rem;background:var(--bg);border:1px solid var(--line);border-radius:.4rem;color:var(--ink)}.filter-list{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}.filter-chip[aria-pressed=true]{color:var(--ink);border-color:var(--cyan);box-shadow:inset 0 0 0 1px var(--cyan)}.results-count{color:var(--muted);font-size:.9rem}.reproduction{padding:1.25rem 0 1.6rem;border-top:1px solid var(--line)}.command-list{display:grid;gap:.7rem}.command-card{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}.command-card pre{margin:.2rem 0;white-space:pre-wrap;overflow-wrap:anywhere}.command-source,.command-label{color:var(--muted)}.copy-button{flex:none;border:1px solid var(--line);border-radius:.4rem;padding:.45rem .7rem;background:transparent;color:var(--ink);cursor:pointer}.copy-button:hover{border-color:var(--cyan)}.setup-note,.lab-provenance{color:var(--muted);font-size:.9rem;max-width:90ch}.footer{border-top:1px solid var(--line);padding:1.2rem 0 2rem;color:var(--muted);font-size:.88rem}@media(max-width:620px){.command-card{display:block}.copy-button{margin-top:.5rem}.surface-nav{gap:.55rem .85rem}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style></head>
+<body><a class="skip-link" href="#catalog">Skip to native catalog</a><main class="shell">
+<nav class="surface-nav" aria-label="Learning surfaces">
+      <a href="index.html">Educational browser lab</a>
+      <a href="portfolio/index.html">Source-linked portfolio guide</a>
+      <a href="#catalog" aria-current="page">Native lesson catalog</a>
+    </nav>
+<section class="hero" aria-labelledby="page-title"><p class="eyebrow">Native source materials / 48 indexed</p><h1 id="page-title">Native lessons and source materials</h1>
+<p class="lede">This index links to repository-authored course records, examples, tutorials, and technical reading. The separate browser lab is an educational surrogate; its sliders and checkpoints do not execute this repository's native engine.</p>
+<p class="revision">Current audited native source: <a href="https://github.com/mohammadrezwankhan/emhass/tree/93c5579a3bb48ff7351ae8f8b46534df23feccab" target="_blank" rel="noopener noreferrer">93c5579a3bb48ff7351ae8f8b46534df23feccab</a></p>
+
+<aside class="surface-note"><strong>Two distinct surfaces.</strong> Use the <a href="index.html">browser teaching lab</a> for its clearly scoped surrogate model. Use the source links below to read the native lessons and implementation. This catalog does not run source code or claim native-engine results.</aside>
+<p class="lab-provenance">Browser-lab provenance from the reconciled package: <a href="https://github.com/mohammadrezwankhan/emhass/tree/da01a0205289823ad4679c28c2f301bcf7e6da71" target="_blank" rel="noopener noreferrer">package source revision da01a0205289823ad4679c28c2f301bcf7e6da71</a>. This is separate from the current native source revision above.</p></section>
+<nav class="section-navigation" aria-label="Five-color learning sections"><a class="section-link section-question" href="#question"><img src="visuals/sections/section-01-question.svg" alt="Section 01: Question / topology"></a>
+<a class="section-link section-equations" href="#equations"><img src="visuals/sections/section-02-equations.svg" alt="Section 02: Equations / provenance"></a>
+<a class="section-link section-reproduce" href="#reproduce"><img src="visuals/sections/section-03-reproduce.svg" alt="Section 03: Reproduce / parameters"></a>
+<a class="section-link section-verification" href="#verification"><img src="visuals/sections/section-04-verification.svg" alt="Section 04: Verification / output"></a>
+<a class="section-link section-scope" href="#scope"><img src="visuals/sections/section-05-scope.svg" alt="Section 05: Scope / limitations"></a></nav>
+<section class="reproduction" id="reproduction" aria-labelledby="reproduction-title"><div class="section-banner"><img src="visuals/sections/section-03-reproduce.svg" alt="Section 03: Reproduce / parameters"></div>
+<h2 id="reproduction-title">Source-defined reproduction commands</h2>
+<p class="setup-note">These exact one-line commands were observed in the audited repository workflow records and link to their source location. Expected setup, tool licensing, data, and environment vary by repository; the dashboard does not execute these commands or promise a completion time.</p>
+<div class="command-list"><article class="command-card">
+          <div><p class="command-label">Expected environment setup</p><pre><code>uv sync --reinstall --extra test</code></pre>
+          <p class="command-source">Observed in <a href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/code-quality.yml#L44" target="_blank" rel="noopener noreferrer">.github/workflows/code-quality.yml:L44</a></p></div>
+          <button class="copy-button" type="button" data-copy="uv sync --reinstall --extra test" aria-label="Copy command 1">Copy command</button>
+        </article><article class="command-card">
+          <div><p class="command-label">Expected environment setup</p><pre><code>uv tool install ruff</code></pre>
+          <p class="command-source">Observed in <a href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/code-quality.yml#L47" target="_blank" rel="noopener noreferrer">.github/workflows/code-quality.yml:L47</a></p></div>
+          <button class="copy-button" type="button" data-copy="uv tool install ruff" aria-label="Copy command 2">Copy command</button>
+        </article><article class="command-card">
+          <div><p class="command-label">Source-defined validation command</p><pre><code>uv run python -m unittest discover -s .github/tests -v</code></pre>
+          <p class="command-source">Observed in <a href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/code-quality.yml#L50" target="_blank" rel="noopener noreferrer">.github/workflows/code-quality.yml:L50</a></p></div>
+          <button class="copy-button" type="button" data-copy="uv run python -m unittest discover -s .github/tests -v" aria-label="Copy command 3">Copy command</button>
+        </article><article class="command-card">
+          <div><p class="command-label">Source-defined example command</p><pre><code>docker run --rm --entrypoint &#x27;/bin/cat&#x27; ${{ steps.build.outputs.imageid }} uv.lock &gt;&gt; ./OSV/${{ matrix.platform.target_arch }}.lock</code></pre>
+          <p class="command-source">Observed in <a href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/docker-build-test.yaml#L61" target="_blank" rel="noopener noreferrer">.github/workflows/docker-build-test.yaml:L61</a></p></div>
+          <button class="copy-button" type="button" data-copy="docker run --rm --entrypoint &#x27;/bin/cat&#x27; ${{ steps.build.outputs.imageid }} uv.lock &gt;&gt; ./OSV/${{ matrix.platform.target_arch }}.lock" aria-label="Copy command 4">Copy command</button>
+        </article><article class="command-card">
+          <div><p class="command-label">Source-defined example command</p><pre><code>docker run --rm --entrypoint &#x27;/bin/cat&#x27; ${{ steps.cache.outputs.imageid }} uv.lock &gt;&gt; ./OSV/${{ matrix.platform.target_arch }}.lock</code></pre>
+          <p class="command-source">Observed in <a href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/publish_docker-test.yaml#L68" target="_blank" rel="noopener noreferrer">.github/workflows/publish_docker-test.yaml:L68</a></p></div>
+          <button class="copy-button" type="button" data-copy="docker run --rm --entrypoint &#x27;/bin/cat&#x27; ${{ steps.cache.outputs.imageid }} uv.lock &gt;&gt; ./OSV/${{ matrix.platform.target_arch }}.lock" aria-label="Copy command 5">Copy command</button>
+        </article><article class="command-card">
+          <div><p class="command-label">Expected environment setup</p><pre><code>python3 -m pip install --break-system-packages .[test]</code></pre>
+          <p class="command-source">Observed in <a href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/updatePVLibDB.yaml#L23" target="_blank" rel="noopener noreferrer">.github/workflows/updatePVLibDB.yaml:L23</a></p></div>
+          <button class="copy-button" type="button" data-copy="python3 -m pip install --break-system-packages .[test]" aria-label="Copy command 6">Copy command</button>
+        </article></div></section>
+<section class="controls" id="catalog" aria-labelledby="catalog-title"><h2 id="catalog-title">Search the native catalog</h2><label for="lesson-search">Search titles, paths, descriptions, and tags</label><input id="lesson-search" type="search" autocomplete="off" placeholder="Try “validation”, “thermal”, or a filename">
+<div class="filter-list" role="group" aria-label="Filter native materials by smart tag"><button class="filter-chip" type="button" data-tag-filter="model" aria-pressed="false">model</button>
+<button class="filter-chip" type="button" data-tag-filter="native-lesson" aria-pressed="false">native lesson</button>
+<button class="filter-chip" type="button" data-tag-filter="native-reading" aria-pressed="false">native reading</button>
+<button class="filter-chip" type="button" data-tag-filter="reproduction" aria-pressed="false">reproduction</button>
+<button class="filter-chip" type="button" data-tag-filter="scope" aria-pressed="false">scope</button>
+<button class="filter-chip" type="button" data-tag-filter="verification" aria-pressed="false">verification</button></div><p class="results-count" id="result-count" role="status" aria-live="polite">48 materials</p>
+<p><a href="native-lessons.json">Read the machine-readable native catalog</a></p></section>
+<section class="catalog-section section-question" id="question" aria-labelledby="heading-question">
+          <div class="section-banner"><img src="visuals/sections/section-01-question.svg" alt="Section 01: Question / topology"></div>
+          <h2 id="heading-question">Question / topology</h2>
+          <div class="lesson-grid"><article class="lesson-card" data-search="**emhass** docs/emhass_presentation.md theme: gaia # default, gaia, uncover, native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>**EMHASS**</h3><p class="excerpt">theme: gaia # default, gaia, uncover,</p>
+              <p class="source-path"><code>docs/EMHASS_presentation.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/EMHASS_presentation.md#L13" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="ai-coder contributor onboarding docs/develop_ai_coders.md companion to docs/develop.md (humans, general) and agents.md (vendor-neutral rules for ai agents). read develop.md first if new to emhass. native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>AI-coder contributor onboarding</h3><p class="excerpt">Companion to docs/develop.md (humans, general) and AGENTS.md (vendor-neutral rules for AI agents). Read develop.md first if new to EMHASS.</p>
+              <p class="source-path"><code>docs/develop_ai_coders.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/develop_ai_coders.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="api reference docs/emhass.md  native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>API Reference</h3>
+              <p class="source-path"><code>docs/emhass.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/emhass.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="battery self-identification docs/battery_identification.md emhass can learn two of the battery constants the optimizer otherwise takes on trust, the usable capacity and the round-trip efficiency, from your own home assistant history. it follows the same learn-from-history pattern as the adjusted pv forecast (set_use_adjusted_pv). native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Battery self-identification</h3><p class="excerpt">EMHASS can learn two of the battery constants the optimizer otherwise takes on trust, the usable capacity and the round-trip efficiency, from your own Home Assistant history. It follows the same learn-from-history pattern as the adjusted PV forecast (set_use_adjusted_pv).</p>
+              <p class="source-path"><code>docs/battery_identification.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/battery_identification.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="emhass development docs/develop.md when contributing to this repository, please first discuss the change you wish to make via issue, native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>EMHASS Development</h3><p class="excerpt">When contributing to this repository, please first discuss the change you wish to make via issue,</p>
+              <p class="source-path"><code>docs/develop.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/develop.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="ev charging with emhass as planner and evcc as executor docs/cookbook/ev_evcc_executor.md let emhass decide when and how much to charge an ev, as one deferrable load in the whole-home native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>EV charging with EMHASS as planner and evcc as executor</h3><p class="excerpt">Let EMHASS decide when and how much to charge an EV, as one deferrable load in the whole-home</p>
+              <p class="source-path"><code>docs/cookbook/ev_evcc_executor.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/ev_evcc_executor.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="home assistant automations docs/automations.md to automate emhass with home assistant, we will need to define some shell commands in the home assistant configuration.yaml file and some basic automations in the automations.yaml file. native reading reproduction" data-tags="reproduction">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Home Assistant Automations</h3><p class="excerpt">To automate EMHASS with Home Assistant, we will need to define some shell commands in the Home Assistant configuration.yaml file and some basic automations in the automations.yaml file.</p>
+              <p class="source-path"><code>docs/automations.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/automations.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">reproduction</span></div>
+            </article><article class="lesson-card" data-search="indices and tables docs/index.md html_theme.sidebar_secondary.remove: true native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Indices and tables</h3><p class="excerpt">html_theme.sidebar_secondary.remove: true</p>
+              <p class="source-path"><code>docs/index.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/index.md#L36" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="passing data to emhass docs/passing_data.md in emhass we have 4 forecasts to deal with: native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Passing data to EMHASS</h3><p class="excerpt">In EMHASS we have 4 forecasts to deal with:</p>
+              <p class="source-path"><code>docs/passing_data.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/passing_data.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="recipe title docs/cookbook/_template.md orphan: true native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Recipe Title</h3><p class="excerpt">orphan: true</p>
+              <p class="source-path"><code>docs/cookbook/_template.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/_template.md#L56" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="the forecast module docs/forecasts.md emhass will need 4 forecasts to work properly: native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>The forecast module</h3><p class="excerpt">EMHASS will need 4 forecasts to work properly:</p>
+              <p class="source-path"><code>docs/forecasts.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/forecasts.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="using commercial solvers (cplex / gurobi) docs/advanced_solvers.md by default, emhass uses the high-performance open-source solver highs. it is bundled with the default docker image and requires no configuration. native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Using Commercial Solvers (CPLEX / Gurobi)</h3><p class="excerpt">By default, EMHASS uses the high-performance open-source solver HiGHS. It is bundled with the default Docker image and requires no configuration.</p>
+              <p class="source-path"><code>docs/advanced_solvers.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/advanced_solvers.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="⚙️ configuration docs/section_config.md  native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>⚙️ Configuration</h3>
+              <p class="source-path"><code>docs/section_config.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/section_config.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="💻 reference docs/section_reference.md  native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>💻 Reference</h3>
+              <p class="source-path"><code>docs/section_reference.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/section_reference.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="🚀 getting started docs/section_getting_started.md  native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>🚀 Getting Started</h3>
+              <p class="source-path"><code>docs/section_getting_started.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/section_getting_started.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article><article class="lesson-card" data-search="🧠 core concepts docs/section_core.md  native reading native-reading" data-tags="native-reading">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>🧠 Core Concepts</h3>
+              <p class="source-path"><code>docs/section_core.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/section_core.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native reading</span></div>
+            </article></div>
+        </section><section class="catalog-section section-equations" id="equations" aria-labelledby="heading-equations">
+          <div class="section-banner"><img src="visuals/sections/section-02-equations.svg" alt="Section 02: Equations / provenance"></div>
+          <h2 id="heading-equations">Equations / provenance</h2>
+          <div class="lesson-grid"><article class="lesson-card" data-search="an ems based on linear programming docs/advanced_math_model.md in this section, we present the basics of the linear programming (lp) approach for a household energy management system (ems). native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>An EMS based on Linear Programming</h3><p class="excerpt">In this section, we present the basics of the Linear Programming (LP) approach for a household Energy Management System (EMS).</p>
+              <p class="source-path"><code>docs/advanced_math_model.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/advanced_math_model.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="configuration file docs/config.md in this section, we will explain all parameters used by emhass. native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Configuration file</h3><p class="excerpt">In this section, we will explain all parameters used by EMHASS.</p>
+              <p class="source-path"><code>docs/config.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/config.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="deferrable load thermal model docs/thermal_model.md emhass supports defining a deferrable load as a thermal model. native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Deferrable load thermal model</h3><p class="excerpt">EMHASS supports defining a deferrable load as a thermal model.</p>
+              <p class="source-path"><code>docs/thermal_model.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/thermal_model.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="demand / capacity charge on peak grid import docs/cookbook/tariff_demand_charge.md make emhass shave your peak grid import (the kw demand / capacity charge many utilities bill on top of energy) in the same optimization that minimizes energy cost — no core changes, no second solver. you set one config key to your tariff&#x27;s demand rate; emhass adds a peak-power term to the objective and spreads deferrable load to hold the single highest import point down. optionally you f… native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Demand / capacity charge on peak grid import</h3><p class="excerpt">Make EMHASS shave your peak grid import (the kW demand / capacity charge many utilities bill on top of energy) in the same optimization that minimizes energy cost — no core changes, no second solver. You set one config key to your tariff&#x27;s demand rate; EMHASS adds a peak-power term to the objective and spreads deferrable load to hold the single highest import point down. Optionally you f…</p>
+              <p class="source-path"><code>docs/cookbook/tariff_demand_charge.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/tariff_demand_charge.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="emhass &amp; emhass-add-on differences docs/differences.md users will pass parameters and secrets into emhass differently, based on what method your running emhass. (add-on, docker, python) native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>EMHASS &amp; EMHASS-Add-on differences</h3><p class="excerpt">Users will pass parameters and secrets into EMHASS differently, based on what method your running emhass. (Add-on, Docker, Python)</p>
+              <p class="source-path"><code>docs/differences.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/differences.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="ev charging as a deferrable load docs/study_cases/ev.md emhass treats an ev charger as a windowed deferrable load: a fixed energy amount that must be delivered before some end time, with charging power up to the charger&#x27;s rated nominal power. the optimizer then chooses when in the available window to charge. native lesson / example model native-lesson" data-tags="model native-lesson">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>EV charging as a deferrable load</h3><p class="excerpt">EMHASS treats an EV charger as a windowed deferrable load: a fixed energy amount that must be delivered before some end time, with charging power up to the charger&#x27;s rated nominal power. The optimizer then chooses when in the available window to charge.</p>
+              <p class="source-path"><code>docs/study_cases/ev.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/ev.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span> <span class="tag">native lesson</span></div>
+            </article><article class="lesson-card" data-search="introduction docs/intro.md emhass (energy management for home assistant) is an optimization tool designed for residential households. the package uses a linear programming approach to optimize energy usage while considering factors such as electricity prices, power generation from solar panels, and energy storage from batteries. emhass provides a high degree of configurability, making it easy to integrate with hom… native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Introduction</h3><p class="excerpt">EMHASS (Energy Management for Home Assistant) is an optimization tool designed for residential households. The package uses a Linear Programming approach to optimize energy usage while considering factors such as electricity prices, power generation from solar panels, and energy storage from batteries. EMHASS provides a high degree of configurability, making it easy to integrate with Hom…</p>
+              <p class="source-path"><code>docs/intro.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/intro.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="introduction readme.md emhass is a python module designed to optimize your home energy interfacing with home assistant. native overview model" data-tags="model">
+              <div class="card-meta"><span>Native overview</span></div>
+              <h3>Introduction</h3><p class="excerpt">EMHASS is a Python module designed to optimize your home energy interfacing with Home Assistant.</p>
+              <p class="source-path"><code>README.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/README.md#L72" target="_blank" rel="noopener noreferrer">Historical README/source guide at da01a0205289</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="main core concepts: the basics docs/main_core_concepts.md emhass is the &quot;brain&quot; of your energy system. while home assistant sees what is happening now, emhass looks at the future (forecasts) to decide what should happen to save you the most money. native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Main Core Concepts: The Basics</h3><p class="excerpt">EMHASS is the &quot;brain&quot; of your energy system. While Home Assistant sees what is happening now, EMHASS looks at the future (forecasts) to decide what should happen to save you the most money.</p>
+              <p class="source-path"><code>docs/main_core_concepts.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/main_core_concepts.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="mpc orchestration via node-red docs/cookbook/transport_nodered_mpc_orchestration.md drive emhass naive-mpc optimization from a node-red flow on any cadence, recomputing runtime parameters per call. transport-agnostic on the emhass side; you pick any sensor source (modbus, mqtt, ha bridge, manufacturer api) for the inputs. after completing this recipe, your node-red instance posts a fresh mpc request every tick and your downstream consumers (smart-home controllers, dashb… native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>MPC orchestration via Node-RED</h3><p class="excerpt">Drive EMHASS naive-MPC optimization from a Node-RED flow on any cadence, recomputing runtime parameters per call. Transport-agnostic on the EMHASS side; you pick any sensor source (Modbus, MQTT, HA bridge, manufacturer API) for the inputs. After completing this recipe, your Node-RED instance posts a fresh MPC request every tick and your downstream consumers (smart-home controllers, dashb…</p>
+              <p class="source-path"><code>docs/cookbook/transport_nodered_mpc_orchestration.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/transport_nodered_mpc_orchestration.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="the machine learning forecaster docs/mlforecaster.md starting with v0.4.0, a new forecast framework is proposed within emhass. it provides a more efficient way to forecast the power load consumption. it is based on the skforecast module that uses scikit-learn regression models considering auto-regression lags as features. the hyperparameter optimization is proposed using bayesian optimization from the optuna module. native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>The machine learning forecaster</h3><p class="excerpt">Starting with v0.4.0, a new forecast framework is proposed within EMHASS. It provides a more efficient way to forecast the power load consumption. It is based on the skforecast module that uses scikit-learn regression models considering auto-regression lags as features. The hyperparameter optimization is proposed using Bayesian optimization from the optuna module.</p>
+              <p class="source-path"><code>docs/mlforecaster.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/mlforecaster.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="the machine learning regressor docs/mlregressor.md starting with v0.9.0, a new framework is proposed within emhass. it provides a machine learning module to predict values from a csv file using different regression models. native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>The machine learning regressor</h3><p class="excerpt">Starting with v0.9.0, a new framework is proposed within EMHASS. It provides a machine learning module to predict values from a CSV file using different regression models.</p>
+              <p class="source-path"><code>docs/mlregressor.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/mlregressor.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="thermal battery for heat pump optimization docs/thermal_battery.md emhass supports modeling thermal batteries for heat pump systems with thermal mass storage. this is useful when you have a heat pump with underfloor heating or a radiator system with a thermal storage medium like a concrete slab or water-based thermal mass. native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Thermal battery for heat pump optimization</h3><p class="excerpt">EMHASS supports modeling thermal batteries for heat pump systems with thermal mass storage. This is useful when you have a heat pump with underfloor heating or a radiator system with a thermal storage medium like a concrete slab or water-based thermal mass.</p>
+              <p class="source-path"><code>docs/thermal_battery.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/thermal_battery.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article><article class="lesson-card" data-search="🔥 thermal integration docs/section_thermal.md  native reading model" data-tags="model">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>🔥 Thermal Integration</h3>
+              <p class="source-path"><code>docs/section_thermal.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/section_thermal.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span></div>
+            </article></div>
+        </section><section class="catalog-section section-reproduce" id="reproduce" aria-labelledby="heading-reproduce">
+          <div class="section-banner"><img src="visuals/sections/section-03-reproduce.svg" alt="Section 03: Reproduce / parameters"></div>
+          <h2 id="heading-reproduce">Reproduce / parameters</h2>
+          <div class="lesson-grid"><article class="lesson-card" data-search="basic system — 5 kwp pv, 5 kwh battery, two deferrable loads docs/study_cases/basic_pv_battery.md this scenario adds a 5 kwh battery to the previous tutorial. the optimizer now schedules battery charge/discharge alongside the deferrable loads. native lesson / example native-lesson" data-tags="native-lesson">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>Basic system — 5 kWp PV, 5 kWh battery, two deferrable loads</h3><p class="excerpt">This scenario adds a 5 kWh battery to the previous tutorial. The optimizer now schedules battery charge/discharge alongside the deferrable loads.</p>
+              <p class="source-path"><code>docs/study_cases/basic_pv_battery.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv_battery.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native lesson</span></div>
+            </article><article class="lesson-card" data-search="basic system — 5 kwp pv, two deferrable loads docs/study_cases/basic_pv.md this scenario adds a 5 kwp pv installation to the previous tutorial. no battery yet. we run two optimization modes against this system: a 7-day historical perfect optimization (to see what the optimal schedule would have been with hindsight) and a day-ahead optimization (the real production case). native lesson / example native-lesson reproduction" data-tags="native-lesson reproduction">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>Basic system — 5 kWp PV, two deferrable loads</h3><p class="excerpt">This scenario adds a 5 kWp PV installation to the previous tutorial. No battery yet. We run two optimization modes against this system: a 7-day historical perfect optimization (to see what the optimal schedule would have been with hindsight) and a day-ahead optimization (the real production case).</p>
+              <p class="source-path"><code>docs/study_cases/basic_pv.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native lesson</span> <span class="tag">reproduction</span></div>
+            </article><article class="lesson-card" data-search="basic system — no pv, two deferrable loads docs/study_cases/basic_no_pv.md this is the simplest scenario: no pv installation, two deferrable loads (for example, a water heater and a pool pump). emhass schedules when to run each load to minimize cost against the day-ahead electricity price. native lesson / example native-lesson reproduction" data-tags="native-lesson reproduction">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>Basic system — no PV, two deferrable loads</h3><p class="excerpt">This is the simplest scenario: no PV installation, two deferrable loads (for example, a water heater and a pool pump). EMHASS schedules when to run each load to minimize cost against the day-ahead electricity price.</p>
+              <p class="source-path"><code>docs/study_cases/basic_no_pv.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_no_pv.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native lesson</span> <span class="tag">reproduction</span></div>
+            </article><article class="lesson-card" data-search="domestic hot water with a deadline-driven temperature profile docs/study_cases/dhw_walkthrough.md a dhw tank is a thermal store, but unlike an underfloor slab it has natural usage spikes (morning shower, evening dishes) that anchor when the water has to be hot, not a continuous comfort range. the naive approach is a fixed daily profile (e.g. &quot;always at least 55 °c between 09:00 and 16:00&quot;), which forces the heat pump to run at a fixed time of day regardless of price. native lesson / example model native-lesson" data-tags="model native-lesson">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>Domestic hot water with a deadline-driven temperature profile</h3><p class="excerpt">A DHW tank is a thermal store, but unlike an underfloor slab it has natural usage spikes (morning shower, evening dishes) that anchor when the water has to be hot, not a continuous comfort range. The naive approach is a fixed daily profile (e.g. &quot;always at least 55 °C between 09:00 and 16:00&quot;), which forces the heat pump to run at a fixed time of day regardless of price.</p>
+              <p class="source-path"><code>docs/study_cases/dhw_walkthrough.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/dhw_walkthrough.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span> <span class="tag">native lesson</span></div>
+            </article><article class="lesson-card" data-search="example configurations docs/study_case.md orphan: true native lesson / example native-lesson" data-tags="native-lesson">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>Example configurations</h3><p class="excerpt">orphan: true</p>
+              <p class="source-path"><code>docs/study_case.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_case.md#L5" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native lesson</span></div>
+            </article><article class="lesson-card" data-search="good practices docs/study_cases/good_practices.md this page collects insights that come from running emhass in production over months: what matters, what doesn&#x27;t, and what surprises new users. treat it as the why behind several recommendations scattered across the tutorials and how-to guides. native lesson / example native-lesson" data-tags="native-lesson">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>Good Practices</h3><p class="excerpt">This page collects insights that come from running EMHASS in production over months: what matters, what doesn&#x27;t, and what surprises new users. Treat it as the why behind several recommendations scattered across the tutorials and how-to guides.</p>
+              <p class="source-path"><code>docs/study_cases/good_practices.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/good_practices.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native lesson</span></div>
+            </article><article class="lesson-card" data-search="heat-pump end-to-end walkthrough docs/study_cases/heat_pump_walkthrough.md this page walks through a complete real-house scenario: pv + electrochemical battery + heat-pump-driven thermal battery + (optionally) a regular ev charger. it is an orchestration page. for the parameter reference of the thermal battery model itself, see reference: thermal_battery. native lesson / example model native-lesson" data-tags="model native-lesson">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>Heat-pump end-to-end walkthrough</h3><p class="excerpt">This page walks through a complete real-house scenario: PV + electrochemical battery + heat-pump-driven thermal battery + (optionally) a regular EV charger. It is an orchestration page. For the parameter reference of the thermal battery model itself, see Reference: thermal_battery.</p>
+              <p class="source-path"><code>docs/study_cases/heat_pump_walkthrough.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/heat_pump_walkthrough.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span> <span class="tag">native lesson</span></div>
+            </article><article class="lesson-card" data-search="installation methods docs/installation_methods.md for home assistant os and ha supervised users, a emhass app repository has been developed to allow the emhass docker container to run as a home assistant app. the app is more user-friendly as the home assistant secrets (url and api key) are automatically placed inside of the emhass container, and web server port (default 5000) is already opened. native reading reproduction" data-tags="reproduction">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Installation Methods</h3><p class="excerpt">For Home Assistant OS and HA Supervised users, A EMHASS app repository has been developed to allow the EMHASS Docker container to run as a Home Assistant app. The app is more user-friendly as the Home Assistant secrets (URL and API key) are automatically placed inside of the EMHASS container, and web server port (default 5000) is already opened.</p>
+              <p class="source-path"><code>docs/installation_methods.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/installation_methods.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">reproduction</span></div>
+            </article><article class="lesson-card" data-search="legacy cli commands docs/study_cases/legacy_cli.md the study-case tutorials and how-to guides primarily show rest api calls (curl, rest_command, or the add-on action button), because the emhass add-on and standalone docker are the recommended deployment targets and these expose rest. native lesson / example native-lesson reproduction" data-tags="native-lesson reproduction">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>Legacy CLI Commands</h3><p class="excerpt">The study-case tutorials and how-to guides primarily show REST API calls (curl, rest_command, or the Add-on action button), because the EMHASS Add-on and standalone Docker are the recommended deployment targets and these expose REST.</p>
+              <p class="source-path"><code>docs/study_cases/legacy_cli.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/legacy_cli.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native lesson</span> <span class="tag">reproduction</span></div>
+            </article><article class="lesson-card" data-search="quick start: configuration and installation docs/quick_start.md the package is meant to be highly configurable with an object-oriented modular approach and a main configuration file defined by the user. native reading reproduction" data-tags="reproduction">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Quick start: Configuration and Installation</h3><p class="excerpt">The package is meant to be highly configurable with an object-oriented modular approach and a main configuration file defined by the user.</p>
+              <p class="source-path"><code>docs/quick_start.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/quick_start.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">reproduction</span></div>
+            </article><article class="lesson-card" data-search="usage guide docs/usage_guide.md if using the add-on or the docker installation, it exposes a simple webserver on port 5000. you can access it directly using your browser. (e.g.: http://localhost:5000) native reading reproduction" data-tags="reproduction">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Usage guide</h3><p class="excerpt">If using the add-on or the Docker installation, it exposes a simple webserver on port 5000. You can access it directly using your browser. (E.g.: http://localhost:5000)</p>
+              <p class="source-path"><code>docs/usage_guide.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/usage_guide.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">reproduction</span></div>
+            </article><article class="lesson-card" data-search="📁 study cases docs/study_cases/index.md end-to-end walkthroughs for common emhass configurations using real data. native lesson / example native-lesson" data-tags="native-lesson">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>📁 Study Cases</h3><p class="excerpt">End-to-end walkthroughs for common EMHASS configurations using real data.</p>
+              <p class="source-path"><code>docs/study_cases/index.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/index.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native lesson</span></div>
+            </article></div>
+        </section><section class="catalog-section section-verification" id="verification" aria-labelledby="heading-verification">
+          <div class="section-banner"><img src="visuals/sections/section-04-verification.svg" alt="Section 04: Verification / output"></div>
+          <h2 id="heading-verification">Verification / output</h2>
+          <div class="lesson-grid"><article class="lesson-card" data-search="plan / optimization output schema docs/plan_output_schema.md this page documents the columns of the optimization-result dataframe returned by native reading verification" data-tags="verification">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Plan / Optimization Output Schema</h3><p class="excerpt">This page documents the columns of the optimization-result DataFrame returned by</p>
+              <p class="source-path"><code>docs/plan_output_schema.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/plan_output_schema.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">verification</span></div>
+            </article><article class="lesson-card" data-search="publish data to home assistant docs/publish_data.md publish-data (which is either run manually or automatically via continual_publish or home assistant automation), will push the optimization results to home assistant for each deferrable load defined in the configuration. for example, if you have defined two deferrable loads, then the command will publish sensor.p_deferrable0 and sensor.p_deferrable1 to home assistant. when the dayahead-o… native reading native-lesson reproduction verification" data-tags="native-lesson reproduction verification">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Publish data to Home Assistant</h3><p class="excerpt">publish-data (which is either run manually or automatically via continual_publish or Home Assistant automation), will push the optimization results to Home Assistant for each deferrable load defined in the configuration. For example, if you have defined two deferrable loads, then the command will publish sensor.p_deferrable0 and sensor.p_deferrable1 to Home Assistant. When the dayahead-o…</p>
+              <p class="source-path"><code>docs/publish_data.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/publish_data.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">native lesson</span> <span class="tag">reproduction</span> <span class="tag">verification</span></div>
+            </article><article class="lesson-card" data-search="reference configurations docs/study_cases/reference_configs.md these are anonymized, abstract templates. they are not real users&#x27; systems. each block is a starting point — the parameter values reflect typical hardware in the archetype, but you must verify against your own equipment. see configuration for the full parameter reference. native lesson / example model native-lesson" data-tags="model native-lesson">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>Reference Configurations</h3><p class="excerpt">These are anonymized, abstract templates. They are not real users&#x27; systems. Each block is a starting point — the parameter values reflect typical hardware in the archetype, but you must verify against your own equipment. See Configuration for the full parameter reference.</p>
+              <p class="source-path"><code>docs/study_cases/reference_configs.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/reference_configs.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span> <span class="tag">native lesson</span></div>
+            </article><article class="lesson-card" data-search="rolling-horizon control with naive-mpc-optim docs/study_cases/mpc.md the dayahead-optim action computes a single 24 h schedule once per day. for systems where forecasts and state change throughout the day (especially battery soc, ev state, dynamic prices), you want model predictive control: re-run the optimization on a rolling window every n minutes, using the latest measurements as the new initial state. native lesson / example model native-lesson verification" data-tags="model native-lesson verification">
+              <div class="card-meta"><span>Native lesson / example</span></div>
+              <h3>Rolling-horizon control with naive-mpc-optim</h3><p class="excerpt">The dayahead-optim action computes a single 24 h schedule once per day. For systems where forecasts and state change throughout the day (especially battery SOC, EV state, dynamic prices), you want Model Predictive Control: re-run the optimization on a rolling window every N minutes, using the latest measurements as the new initial state.</p>
+              <p class="source-path"><code>docs/study_cases/mpc.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/mpc.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">model</span> <span class="tag">native lesson</span> <span class="tag">verification</span></div>
+            </article></div>
+        </section><section class="catalog-section section-scope" id="scope" aria-labelledby="heading-scope">
+          <div class="section-banner"><img src="visuals/sections/section-05-scope.svg" alt="Section 05: Scope / limitations"></div>
+          <h2 id="heading-scope">Scope / limitations</h2>
+          <div class="lesson-grid"><article class="lesson-card" data-search="battery-aware runtime params docs/cookbook/battery_aware_runtime_params.md feed live battery state of charge (soc) back into emhass naive-mpc on every call so the optimizer plans against the real current state, not a stale assumption. avoid the most common consumer bug: soc unit mismatch (fraction vs percent). after this recipe, every mpc post your orchestrator sends carries the current soc_init, validated and clamped to your configured bounds. native reading scope" data-tags="scope">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>Battery-aware runtime params</h3><p class="excerpt">Feed live battery state of charge (SOC) back into EMHASS naive-MPC on every call so the optimizer plans against the real current state, not a stale assumption. Avoid the most common consumer bug: SOC unit mismatch (fraction vs percent). After this recipe, every MPC POST your orchestrator sends carries the current soc_init, validated and clamped to your configured bounds.</p>
+              <p class="source-path"><code>docs/cookbook/battery_aware_runtime_params.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/battery_aware_runtime_params.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">scope</span></div>
+            </article><article class="lesson-card" data-search="🧑‍🍳 cookbook docs/cookbook/index.md short, standalone, copy-pasteable recipes for common emhass patterns. each recipe follows a fixed template: goal / prerequisites / config / snippet / caveats / credits. native reading scope" data-tags="scope">
+              <div class="card-meta"><span>Native reading</span></div>
+              <h3>🧑‍🍳 Cookbook</h3><p class="excerpt">Short, standalone, copy-pasteable recipes for common EMHASS patterns. Each recipe follows a fixed template: Goal / Prerequisites / Config / Snippet / Caveats / Credits.</p>
+              <p class="source-path"><code>docs/cookbook/index.md</code></p>
+              <div class="card-links"><a class="source-link" href="https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/index.md#L1" target="_blank" rel="noopener noreferrer">Source at 93c5579a3bb4</a></div><div class="tags"><span class="tag">scope</span></div>
+            </article></div>
+        </section>
+<footer class="footer"><p>Repository: <a href="https://github.com/mohammadrezwankhan/emhass" target="_blank" rel="noopener noreferrer">mohammadrezwankhan/emhass</a> · audited source revision 93c5579a3bb48ff7351ae8f8b46534df23feccab.</p><p>The page is a source navigator. It is not a native runtime, verification result, peer review, or physical-fidelity claim.</p></footer>
+</main><script>
+(() => {
+  const search = document.getElementById('lesson-search');
+  const cards = [...document.querySelectorAll('.lesson-card')];
+  const filters = new Set();
+  const count = document.getElementById('result-count');
+  const filterButtons = [...document.querySelectorAll('[data-tag-filter]')];
+  function applyFilters() {
+    const query = (search.value || '').trim().toLocaleLowerCase();
+    let shown = 0;
+    for (const card of cards) {
+      const matchesText = !query || card.dataset.search.includes(query);
+      const cardTags = new Set((card.dataset.tags || '').split(/\s+/).filter(Boolean));
+      const matchesTags = filters.size === 0 || [...filters].every(tag => cardTags.has(tag));
+      card.hidden = !(matchesText && matchesTags);
+      if (!card.hidden) shown += 1;
+    }
+    count.textContent = `${shown} of ${cards.length} materials`;
+  }
+  search.addEventListener('input', applyFilters);
+  for (const button of filterButtons) button.addEventListener('click', () => {
+    const tag = button.dataset.tagFilter;
+    if (filters.has(tag)) filters.delete(tag); else filters.add(tag);
+    button.setAttribute('aria-pressed', filters.has(tag) ? 'true' : 'false');
+    applyFilters();
+  });
+  async function copyText(text) {
+    try { if (navigator.clipboard && navigator.clipboard.writeText) { await navigator.clipboard.writeText(text); return true; } } catch (_) {}
+    const field = document.createElement('textarea');
+    field.value = text; field.setAttribute('readonly', '');
+    field.style.position = 'fixed'; field.style.opacity = '0';
+    document.body.append(field); field.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch (_) { copied = false; }
+    field.remove(); return copied;
+  }
+  for (const button of document.querySelectorAll('[data-copy]')) button.addEventListener('click', async () => {
+    const original = button.textContent;
+    const copied = await copyText(button.dataset.copy || '');
+    button.textContent = copied ? 'Copied' : 'Select command';
+    if (!copied) {
+      const code = button.closest('.command-card').querySelector('code');
+      const range = document.createRange(); range.selectNodeContents(code);
+      const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
+      code.setAttribute('tabindex', '-1'); code.focus();
+    }
+    window.setTimeout(() => { button.textContent = original; }, 1800);
+  });
+  applyFilters();
+})();
+</script></body></html>

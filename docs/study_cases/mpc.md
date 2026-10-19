@@ -35,6 +35,8 @@ For the full list of runtime keys, see [Passing data](../passing_data.md).
 
 ## Run
 
+![Section 03 · Reproduce / parameters](../visuals/sections/section-03-reproduce.svg)
+
 REST (recommended for HA `rest_command` automation):
 
 ```yaml

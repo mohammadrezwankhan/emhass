@@ -1,5 +1,7 @@
 # Legacy CLI Commands
 
+![Section 03 · Reproduce / parameters](../visuals/sections/section-03-reproduce.svg)
+
 > **Type:** Reference — lookup of legacy `emhass --action ...` command-line equivalents.
 
 The study-case tutorials and how-to guides primarily show REST API calls (curl, `rest_command`, or the Add-on action button), because the EMHASS Add-on and standalone Docker are the recommended deployment targets and these expose REST.

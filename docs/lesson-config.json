@@ -1,90 +1,315 @@
 {
-  "repository": "emhass",
-  "domain": "DOMAIN_B",
-  "title": "EMHASS: Home Energy Management Optimization",
-  "version": "2.0.0",
-  "author": "Mohammad Rezwan Khan",
-  "lessons": [
+  "$schema": "./lesson-config.schema.json",
+  "schema_version": "1.0",
+  "repository": {
+    "owner": "mohammadrezwankhan",
+    "slug": "emhass",
+    "name": "emhass",
+    "title": "Home Energy Automation Lab",
+    "url": "https://github.com/mohammadrezwankhan/emhass",
+    "default_branch": "master",
+    "description": "Study home-energy optimization and EV charging windows through practical lessons that retain upstream EMHASS interfaces.",
+    "summary": "This fork preserves EMHASS energy optimization, forecasts, and Home Assistant interfaces. A synthetic EV charging exercise explains energy windows and the distinction between a planner and a device executor.",
+    "audience": "Home-energy developers, automation learners, and contributors studying deferrable-load planning.",
+    "topics": [
+      "home-assistant",
+      "emhass",
+      "home-energy-management",
+      "energy-optimization",
+      "smart-home",
+      "automation",
+      "solar-energy",
+      "battery-energy-storage",
+      "electric-vehicles",
+      "ev-charging",
+      "model-predictive-control",
+      "linear-programming",
+      "python",
+      "forecasting",
+      "open-source"
+    ],
+    "source_paths": [
+      "README.md",
+      "LICENSE",
+      "AGENTS.md",
+      "pyproject.toml",
+      "docs/develop.md",
+      "docs/quick_start.md",
+      "docs/study_cases/ev.md",
+      "docs/cookbook/ev_evcc_executor.md",
+      "src/emhass/optimization.py",
+      "src/emhass/command_line.py",
+      "tests/test_optimization.py"
+    ],
+    "is_fork": true,
+    "upstream": "https://github.com/davidusb-geek/emhass"
+  },
+  "domain": {
+    "id": "B",
+    "name": "AI and automation",
+    "primary": "#B388FF",
+    "secondary": "#FF4081",
+    "surface": "#120D2B",
+    "glow": "rgba(179,136,255,0.35)"
+  },
+  "model": {
+    "title": "EV energy windows · synthetic charging exercise",
+    "timeUnit": "min",
+    "horizon": 120,
+    "parameters": [
+      {
+        "key": "capacityKWh",
+        "label": "Battery capacity",
+        "unit": "kWh",
+        "min": 20,
+        "max": 120,
+        "step": 5,
+        "default": 60,
+        "calibration": "Illustrative input; verified against the declared analytical model, not field measurements."
+      },
+      {
+        "key": "chargerKW",
+        "label": "Charger power",
+        "unit": "kW",
+        "min": 5,
+        "max": 180,
+        "step": 5,
+        "default": 10,
+        "calibration": "Illustrative input; verified against the declared analytical model, not field measurements."
+      },
+      {
+        "key": "initialSoc",
+        "label": "Initial charge",
+        "unit": "%",
+        "min": 5,
+        "max": 70,
+        "step": 5,
+        "default": 20,
+        "calibration": "Illustrative input; verified against the declared analytical model, not field measurements."
+      },
+      {
+        "key": "efficiencyPct",
+        "label": "Charge efficiency",
+        "unit": "%",
+        "min": 75,
+        "max": 99,
+        "step": 1,
+        "default": 90,
+        "calibration": "Illustrative input; verified against the declared analytical model, not field measurements."
+      }
+    ],
+    "metrics": [
+      {
+        "key": "socPct",
+        "label": "State of charge",
+        "unit": "%",
+        "decimals": 1
+      },
+      {
+        "key": "chargingKW",
+        "label": "Battery charge power",
+        "unit": "kW",
+        "decimals": 1
+      },
+      {
+        "key": "energyAddedKWh",
+        "label": "Stored energy added",
+        "unit": "kWh",
+        "decimals": 2
+      },
+      {
+        "key": "lossKW",
+        "label": "Conversion loss",
+        "unit": "kW",
+        "decimals": 2
+      }
+    ],
+    "equation": "P = charger · efficiency; charge is linear to 80%, then the remaining 20% follows an exponential taper with time constant 0.2Q/P hours.",
+    "assumptions": [
+      "Constant input power until 80% charge, followed by a continuous exponential taper.",
+      "Charging begins below 80%; efficiency is constant and the battery is at ideal temperature.",
+      "No charger handshake, grid constraint, degradation, or real vehicle data is represented.",
+      "The source remains a fork of davidusb-geek/emhass with David HERNANDEZ TORRES and contributor attribution preserved.",
+      "Native EV documentation describes a windowed deferrable energy load; the browser taper is an additional illustrative physical assumption, not the native optimizer.",
+      "No vehicle, tariff, forecast provider, energy meter, or evcc service is connected; the lesson is entirely offline."
+    ],
+    "kind": "charging",
+    "introduction": "The browser integrates an invented charging curve with constant efficiency and a taper above 80% SOC. It does not run EMHASS, schedule tariffs, call Home Assistant, or send commands to a charger.",
+    "calibration_status": "Uncalibrated synthetic teaching proxy"
+  },
+  "modules": [
     {
-      "id": "L01",
-      "title": "Home Energy Telemetry Ingestion via Home Assistant REST API",
-      "level": "Beginner",
-      "duration": "30 mins",
-      "config_file": "configs/ha_telemetry_config.json",
-      "summary": "Connect EMHASS daemon to Home Assistant sensors: household power load, solar inverter yield, and utility dynamic price feed.",
-      "inputs": [
-        "Home Assistant Long-Lived Access Token",
-        "Sensor entity IDs"
+      "id": "module-1",
+      "title": "Translate a charging target into stored energy",
+      "objective": "Relate battery capacity, charge efficiency, power, and a fixed time window.",
+      "minutes": 12,
+      "steps": [
+        "Read the EV study case and identify the difference between kW, kWh, and a departure deadline.",
+        "Apply a 60 kWh battery at 20% SOC, a 10 kW charger, and 90% efficiency.",
+        "Predict stored energy after two hours before running the synthetic curve."
       ],
-      "parameters": {
-        "PollingInterval_sec": 60,
-        "HistoryLookback_Hours": 48
+      "preset": {
+        "capacityKWh": 60,
+        "chargerKW": 10,
+        "initialSoc": 20,
+        "efficiencyPct": 90
       },
       "checkpoints": [
-        "Validate sensor data availability and unit normalization (Watts to kW)",
-        "Test bi-directional command posting to switch entities"
-      ]
+        {
+          "label": "Two hours add 18 kWh",
+          "metric": "energyAddedKWh",
+          "operator": "==",
+          "expected": 18,
+          "tolerance": 0.02,
+          "atTime": 120
+        },
+        {
+          "label": "Resulting SOC is 50%",
+          "metric": "socPct",
+          "operator": "==",
+          "expected": 50,
+          "tolerance": 0.02,
+          "atTime": 120
+        }
+      ],
+      "reflection": "Why should an optimizer distinguish energy supplied by a charger from energy actually stored in the battery?",
+      "source_paths": [
+        "docs/study_cases/ev.md",
+        "src/emhass/optimization.py"
+      ],
+      "level": "Foundation"
     },
     {
-      "id": "L02",
-      "title": "Day-Ahead Solar Irradiance & Household Load Forecasting",
-      "level": "Intermediate",
-      "duration": "45 mins",
-      "config_file": "configs/forecast_ml_tuning.json",
-      "summary": "Generate 24-hour predictive profiles using weather APIs and machine learning (KNN / Random Forest) trained on historical household usage.",
-      "inputs": [
-        "Local weather forecast (temperature, cloud cover)",
-        "Historical power consumption CSV"
+      "id": "module-2",
+      "title": "Check the time-window calculation",
+      "objective": "Determine whether a nominal charging target is reachable within a stated window.",
+      "minutes": 15,
+      "steps": [
+        "Keep the 60 kWh battery and 20% initial SOC.",
+        "Increase charger power to 20 kW at 90% efficiency and calculate when 80% SOC is reached.",
+        "Run to 120 minutes and compare the result with the deferrable-load energy/deadline inputs described in the source."
       ],
-      "parameters": {
-        "ForecastHorizon_Hours": 24,
-        "ModelType": "Scikit-Learn Regression"
+      "preset": {
+        "capacityKWh": 60,
+        "chargerKW": 20,
+        "initialSoc": 20,
+        "efficiencyPct": 90
       },
       "checkpoints": [
-        "Achieve forecast Mean Absolute Percentage Error (MAPE) < 14%",
-        "Plot forecast vs actual consumption envelope"
-      ]
+        {
+          "label": "Two-hour stored-energy target is 36 kWh",
+          "metric": "energyAddedKWh",
+          "operator": "==",
+          "expected": 36,
+          "tolerance": 0.02,
+          "atTime": 120
+        },
+        {
+          "label": "SOC reaches the taper boundary at 80%",
+          "metric": "socPct",
+          "operator": "==",
+          "expected": 80,
+          "tolerance": 0.02,
+          "atTime": 120
+        }
+      ],
+      "reflection": "Which runtime fields would a real integration need to keep up to date, and which device-specific measurements are absent here?",
+      "source_paths": [
+        "docs/study_cases/ev.md",
+        "docs/cookbook/ev_evcc_executor.md"
+      ],
+      "level": "Parameter study"
     },
     {
-      "id": "L03",
-      "title": "Mixed-Integer Linear Programming (MILP) Dispatch Solver",
-      "level": "Advanced",
-      "duration": "60 mins",
-      "config_file": "configs/milp_optimizer.json",
-      "summary": "Solve optimal schedule for EV charging, heat pump heating cycles, and home battery charging to minimize electric bill.",
-      "inputs": [
-        "Hourly electricity tariff ($/kWh)",
-        "Solar generation forecast curve"
+      "id": "module-3",
+      "title": "Expose the constant-power approximation",
+      "objective": "Explain how a physical charging taper changes a naive energy-over-power estimate.",
+      "minutes": 15,
+      "steps": [
+        "Start the 60 kWh battery at 50% SOC with the 20 kW charger and 90% efficiency.",
+        "Predict when the 80% boundary occurs and why power then declines in this toy model.",
+        "Inspect the two-hour SOC and power and compare with the source’s nominal-power scheduling abstraction."
       ],
-      "parameters": {
-        "HomeBattery_kWh": 10.0,
-        "MaxChargeRate_kW": 3.3,
-        "HeatPump_ThermalStorage_Liters": 300
+      "preset": {
+        "capacityKWh": 60,
+        "chargerKW": 20,
+        "initialSoc": 50,
+        "efficiencyPct": 90
       },
       "checkpoints": [
-        "Charge battery during low/negative price hours",
-        "Achieve > 82% household solar self-consumption ratio"
-      ]
+        {
+          "label": "SOC after one hour reaches 80%",
+          "metric": "socPct",
+          "operator": "==",
+          "expected": 80,
+          "tolerance": 0.02,
+          "atTime": 60
+        },
+        {
+          "label": "Charge power tapers by two hours",
+          "metric": "chargingKW",
+          "operator": "==",
+          "expected": 4.016343,
+          "tolerance": 0.02,
+          "atTime": 120
+        }
+      ],
+      "reflection": "Why must the browser taper not be presented as a verified charging curve for a particular EV or as an EMHASS scheduling result?",
+      "source_paths": [
+        "docs/study_cases/ev.md",
+        "docs/cookbook/ev_evcc_executor.md"
+      ],
+      "level": "Stress test"
     },
     {
-      "id": "L04",
-      "title": "Real-Time MPC Dispatch & Automations Hardening",
-      "level": "Production",
-      "duration": "60 mins",
-      "config_file": "configs/realtime_mpc_rules.json",
-      "summary": "Run receding-horizon 5-minute MPC loop responding to sudden cloud cover or unexpected cooking stove loads without violating battery limits.",
-      "inputs": [
-        "Real-time power meter updates",
-        "Immediate EV departure overrides"
+      "id": "module-4",
+      "title": "Reject an infeasible target before automation",
+      "objective": "Document an energy shortfall and preserve the planner/executor responsibility boundary.",
+      "minutes": 18,
+      "steps": [
+        "Use an 80 kWh battery at 30% SOC, 15 kW charger power, and 90% efficiency.",
+        "Test a two-hour target of 80% SOC and calculate why this window is insufficient.",
+        "Export the assumptions and read how the cookbook separates EMHASS planning from evcc execution."
       ],
-      "parameters": {
-        "RecalculationPeriod_min": 5,
-        "MinBatteryReserve_pct": 20.0
+      "preset": {
+        "capacityKWh": 80,
+        "chargerKW": 15,
+        "initialSoc": 30,
+        "efficiencyPct": 90
       },
       "checkpoints": [
-        "Prevent uncoordinated EV charging tripping main household circuit breaker",
-        "Demonstrate 35% lower monthly electric bill"
-      ]
+        {
+          "label": "Only 27 kWh are stored in the window",
+          "metric": "energyAddedKWh",
+          "operator": "==",
+          "expected": 27,
+          "tolerance": 0.02,
+          "atTime": 120
+        },
+        {
+          "label": "SOC remains below the requested 80% target",
+          "metric": "socPct",
+          "operator": "<",
+          "expected": 80,
+          "tolerance": 0.02,
+          "atTime": 120
+        }
+      ],
+      "reflection": "What should a real automation do when a plan is infeasible or stale, and what evidence would you require before connecting an executor?",
+      "source_paths": [
+        "docs/study_cases/ev.md",
+        "docs/cookbook/ev_evcc_executor.md",
+        "src/emhass/command_line.py"
+      ],
+      "level": "Transfer to source"
     }
-  ]
+  ],
+  "source": {
+    "commit": "da01a0205289823ad4679c28c2f301bcf7e6da71",
+    "audited_at": "2026-10-19T08:39:24Z",
+    "url": "https://github.com/mohammadrezwankhan/emhass/tree/da01a0205289823ad4679c28c2f301bcf7e6da71",
+    "calibration_status": "synthetic-analytical-fixtures",
+    "scope": "This browser lab is a standalone teaching approximation. Use the linked source for the project implementation."
+  },
+  "dashboard_url": "https://mohammadrezwankhan.github.io/emhass/"
 }

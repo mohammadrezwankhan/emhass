@@ -1,0 +1,1514 @@
+{
+  "schema_version": 1,
+  "repository": {
+    "name": "emhass",
+    "name_with_owner": "mohammadrezwankhan/emhass",
+    "url": "https://github.com/mohammadrezwankhan/emhass"
+  },
+  "native_source": {
+    "commit": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+    "url": "https://github.com/mohammadrezwankhan/emhass/tree/93c5579a3bb48ff7351ae8f8b46534df23feccab",
+    "source_path_override": null
+  },
+  "browser_lab_package_provenance": {
+    "commit": "da01a0205289823ad4679c28c2f301bcf7e6da71",
+    "url": "https://github.com/mohammadrezwankhan/emhass/tree/da01a0205289823ad4679c28c2f301bcf7e6da71",
+    "scope": "This browser lab is a standalone teaching approximation. Use the linked source for the project implementation.",
+    "calibration_status": "synthetic-analytical-fixtures",
+    "config_path": "docs/lesson-config.json"
+  },
+  "native_catalog_source": "Tracked Markdown in source lesson, example, study-case, concept, model, and documentation paths.",
+  "native_material_count": 48,
+  "reproduction_command_count": 6,
+  "materials": [
+    {
+      "id": "doc-5ef79d67947b",
+      "title": "**EMHASS**",
+      "path": "docs/EMHASS_presentation.md",
+      "line": 13,
+      "source_paths": [
+        "docs/EMHASS_presentation.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/EMHASS_presentation.md#L13",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "theme: gaia # default, gaia, uncover,",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-50fe6bb6fffb",
+      "title": "AI-coder contributor onboarding",
+      "path": "docs/develop_ai_coders.md",
+      "line": 1,
+      "source_paths": [
+        "docs/develop_ai_coders.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/develop_ai_coders.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "Companion to docs/develop.md (humans, general) and AGENTS.md (vendor-neutral rules for AI agents). Read develop.md first if new to EMHASS.",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-2406036b73ad",
+      "title": "API Reference",
+      "path": "docs/emhass.md",
+      "line": 1,
+      "source_paths": [
+        "docs/emhass.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/emhass.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-46b5fe849a09",
+      "title": "Battery self-identification",
+      "path": "docs/battery_identification.md",
+      "line": 1,
+      "source_paths": [
+        "docs/battery_identification.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/battery_identification.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "EMHASS can learn two of the battery constants the optimizer otherwise takes on trust, the usable capacity and the round-trip efficiency, from your own Home Assistant history. It follows the same learn-from-history pattern as the adjusted PV forecast (set_use_adjusted_pv).",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-6679b745536e",
+      "title": "EMHASS Development",
+      "path": "docs/develop.md",
+      "line": 1,
+      "source_paths": [
+        "docs/develop.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/develop.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "When contributing to this repository, please first discuss the change you wish to make via issue,",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-f8f8b1d38fc8",
+      "title": "EV charging with EMHASS as planner and evcc as executor",
+      "path": "docs/cookbook/ev_evcc_executor.md",
+      "line": 1,
+      "source_paths": [
+        "docs/cookbook/ev_evcc_executor.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/ev_evcc_executor.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "Let EMHASS decide when and how much to charge an EV, as one deferrable load in the whole-home",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-0e0d3f0b3886",
+      "title": "Home Assistant Automations",
+      "path": "docs/automations.md",
+      "line": 1,
+      "source_paths": [
+        "docs/automations.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/automations.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "To automate EMHASS with Home Assistant, we will need to define some shell commands in the Home Assistant configuration.yaml file and some basic automations in the automations.yaml file.",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "reproduction"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-0b3e33619677",
+      "title": "Indices and tables",
+      "path": "docs/index.md",
+      "line": 36,
+      "source_paths": [
+        "docs/index.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/index.md#L36",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "html_theme.sidebar_secondary.remove: true",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-d9ddab5f0068",
+      "title": "Passing data to EMHASS",
+      "path": "docs/passing_data.md",
+      "line": 1,
+      "source_paths": [
+        "docs/passing_data.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/passing_data.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "In EMHASS we have 4 forecasts to deal with:",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-572764f0ecca",
+      "title": "Recipe Title",
+      "path": "docs/cookbook/_template.md",
+      "line": 56,
+      "source_paths": [
+        "docs/cookbook/_template.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/_template.md#L56",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "orphan: true",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-d0e26b84d543",
+      "title": "The forecast module",
+      "path": "docs/forecasts.md",
+      "line": 1,
+      "source_paths": [
+        "docs/forecasts.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/forecasts.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "EMHASS will need 4 forecasts to work properly:",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-e080c659d7df",
+      "title": "Using Commercial Solvers (CPLEX / Gurobi)",
+      "path": "docs/advanced_solvers.md",
+      "line": 1,
+      "source_paths": [
+        "docs/advanced_solvers.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/advanced_solvers.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "By default, EMHASS uses the high-performance open-source solver HiGHS. It is bundled with the default Docker image and requires no configuration.",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-ab2305698f73",
+      "title": "⚙️ Configuration",
+      "path": "docs/section_config.md",
+      "line": 1,
+      "source_paths": [
+        "docs/section_config.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/section_config.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-82b53cc909ab",
+      "title": "💻 Reference",
+      "path": "docs/section_reference.md",
+      "line": 1,
+      "source_paths": [
+        "docs/section_reference.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/section_reference.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-4e6e415b3178",
+      "title": "🚀 Getting Started",
+      "path": "docs/section_getting_started.md",
+      "line": 1,
+      "source_paths": [
+        "docs/section_getting_started.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/section_getting_started.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-eb315d98a7b2",
+      "title": "🧠 Core Concepts",
+      "path": "docs/section_core.md",
+      "line": 1,
+      "source_paths": [
+        "docs/section_core.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/section_core.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "",
+      "type": "Native reading",
+      "section": "question",
+      "tags": [
+        "native-reading"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-782925e8d206",
+      "title": "An EMS based on Linear Programming",
+      "path": "docs/advanced_math_model.md",
+      "line": 1,
+      "source_paths": [
+        "docs/advanced_math_model.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/advanced_math_model.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "In this section, we present the basics of the Linear Programming (LP) approach for a household Energy Management System (EMS).",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-8b74e856f0ce",
+      "title": "Configuration file",
+      "path": "docs/config.md",
+      "line": 1,
+      "source_paths": [
+        "docs/config.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/config.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "In this section, we will explain all parameters used by EMHASS.",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-a359e4e18ea4",
+      "title": "Deferrable load thermal model",
+      "path": "docs/thermal_model.md",
+      "line": 1,
+      "source_paths": [
+        "docs/thermal_model.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/thermal_model.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "EMHASS supports defining a deferrable load as a thermal model.",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-dd25963df65c",
+      "title": "Demand / capacity charge on peak grid import",
+      "path": "docs/cookbook/tariff_demand_charge.md",
+      "line": 1,
+      "source_paths": [
+        "docs/cookbook/tariff_demand_charge.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/tariff_demand_charge.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "Make EMHASS shave your peak grid import (the kW demand / capacity charge many utilities bill on top of energy) in the same optimization that minimizes energy cost — no core changes, no second solver. You set one config key to your tariff's demand rate; EMHASS adds a peak-power term to the objective and spreads deferrable load to hold the single highest import point down. Optionally you f…",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-13b673e84867",
+      "title": "EMHASS & EMHASS-Add-on differences",
+      "path": "docs/differences.md",
+      "line": 1,
+      "source_paths": [
+        "docs/differences.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/differences.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "Users will pass parameters and secrets into EMHASS differently, based on what method your running emhass. (Add-on, Docker, Python)",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-795b73ed022b",
+      "title": "EV charging as a deferrable load",
+      "path": "docs/study_cases/ev.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/ev.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/ev.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "EMHASS treats an EV charger as a windowed deferrable load: a fixed energy amount that must be delivered before some end time, with charging power up to the charger's rated nominal power. The optimizer then chooses when in the available window to charge.",
+      "type": "Native lesson / example",
+      "section": "equations",
+      "tags": [
+        "model",
+        "native-lesson"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-7a9bff1921a3",
+      "title": "Introduction",
+      "path": "docs/intro.md",
+      "line": 1,
+      "source_paths": [
+        "docs/intro.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/intro.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "EMHASS (Energy Management for Home Assistant) is an optimization tool designed for residential households. The package uses a Linear Programming approach to optimize energy usage while considering factors such as electricity prices, power generation from solar panels, and energy storage from batteries. EMHASS provides a high degree of configurability, making it easy to integrate with Hom…",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-8ec9a00bfd09",
+      "title": "Introduction",
+      "path": "README.md",
+      "line": 72,
+      "source_paths": [
+        "README.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/da01a0205289823ad4679c28c2f301bcf7e6da71/README.md#L72",
+      "source_revision": "da01a0205289823ad4679c28c2f301bcf7e6da71",
+      "source_kind": "historical-reconciled-readme",
+      "source_label": "Historical README/source guide at da01a0205289",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "EMHASS is a Python module designed to optimize your home energy interfacing with Home Assistant.",
+      "type": "Native overview",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null,
+      "source_blob_path": "README.md",
+      "source_blob_sha256": "ab1dccefc6dd12eda90d11a57cedc3aebdf82a9fc0843ab7968bfcb1d3673e47",
+      "source_blob_retrieval": "git-show",
+      "source_blob_cache": null
+    },
+    {
+      "id": "doc-18df5840fc08",
+      "title": "Main Core Concepts: The Basics",
+      "path": "docs/main_core_concepts.md",
+      "line": 1,
+      "source_paths": [
+        "docs/main_core_concepts.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/main_core_concepts.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "EMHASS is the \"brain\" of your energy system. While Home Assistant sees what is happening now, EMHASS looks at the future (forecasts) to decide what should happen to save you the most money.",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-c6e371666392",
+      "title": "MPC orchestration via Node-RED",
+      "path": "docs/cookbook/transport_nodered_mpc_orchestration.md",
+      "line": 1,
+      "source_paths": [
+        "docs/cookbook/transport_nodered_mpc_orchestration.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/transport_nodered_mpc_orchestration.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "Drive EMHASS naive-MPC optimization from a Node-RED flow on any cadence, recomputing runtime parameters per call. Transport-agnostic on the EMHASS side; you pick any sensor source (Modbus, MQTT, HA bridge, manufacturer API) for the inputs. After completing this recipe, your Node-RED instance posts a fresh MPC request every tick and your downstream consumers (smart-home controllers, dashb…",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-9062c1f6c0c9",
+      "title": "The machine learning forecaster",
+      "path": "docs/mlforecaster.md",
+      "line": 1,
+      "source_paths": [
+        "docs/mlforecaster.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/mlforecaster.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "Starting with v0.4.0, a new forecast framework is proposed within EMHASS. It provides a more efficient way to forecast the power load consumption. It is based on the skforecast module that uses scikit-learn regression models considering auto-regression lags as features. The hyperparameter optimization is proposed using Bayesian optimization from the optuna module.",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-ac93f8431d96",
+      "title": "The machine learning regressor",
+      "path": "docs/mlregressor.md",
+      "line": 1,
+      "source_paths": [
+        "docs/mlregressor.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/mlregressor.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "Starting with v0.9.0, a new framework is proposed within EMHASS. It provides a machine learning module to predict values from a CSV file using different regression models.",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-f24d3c29f619",
+      "title": "Thermal battery for heat pump optimization",
+      "path": "docs/thermal_battery.md",
+      "line": 1,
+      "source_paths": [
+        "docs/thermal_battery.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/thermal_battery.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "EMHASS supports modeling thermal batteries for heat pump systems with thermal mass storage. This is useful when you have a heat pump with underfloor heating or a radiator system with a thermal storage medium like a concrete slab or water-based thermal mass.",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-0b88696dc945",
+      "title": "🔥 Thermal Integration",
+      "path": "docs/section_thermal.md",
+      "line": 1,
+      "source_paths": [
+        "docs/section_thermal.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/section_thermal.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "",
+      "type": "Native reading",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-dca12cdd59be",
+      "title": "Basic system — 5 kWp PV, 5 kWh battery, two deferrable loads",
+      "path": "docs/study_cases/basic_pv_battery.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/basic_pv_battery.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv_battery.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "This scenario adds a 5 kWh battery to the previous tutorial. The optimizer now schedules battery charge/discharge alongside the deferrable loads.",
+      "type": "Native lesson / example",
+      "section": "reproduce",
+      "tags": [
+        "native-lesson"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-ce3b77440dec",
+      "title": "Basic system — 5 kWp PV, two deferrable loads",
+      "path": "docs/study_cases/basic_pv.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/basic_pv.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "This scenario adds a 5 kWp PV installation to the previous tutorial. No battery yet. We run two optimization modes against this system: a 7-day historical perfect optimization (to see what the optimal schedule would have been with hindsight) and a day-ahead optimization (the real production case).",
+      "type": "Native lesson / example",
+      "section": "reproduce",
+      "tags": [
+        "native-lesson",
+        "reproduction"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-529100528159",
+      "title": "Basic system — no PV, two deferrable loads",
+      "path": "docs/study_cases/basic_no_pv.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/basic_no_pv.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_no_pv.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "This is the simplest scenario: no PV installation, two deferrable loads (for example, a water heater and a pool pump). EMHASS schedules when to run each load to minimize cost against the day-ahead electricity price.",
+      "type": "Native lesson / example",
+      "section": "reproduce",
+      "tags": [
+        "native-lesson",
+        "reproduction"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-420be57d5583",
+      "title": "Domestic hot water with a deadline-driven temperature profile",
+      "path": "docs/study_cases/dhw_walkthrough.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/dhw_walkthrough.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/dhw_walkthrough.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "A DHW tank is a thermal store, but unlike an underfloor slab it has natural usage spikes (morning shower, evening dishes) that anchor when the water has to be hot, not a continuous comfort range. The naive approach is a fixed daily profile (e.g. \"always at least 55 °C between 09:00 and 16:00\"), which forces the heat pump to run at a fixed time of day regardless of price.",
+      "type": "Native lesson / example",
+      "section": "reproduce",
+      "tags": [
+        "model",
+        "native-lesson"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-787955a74325",
+      "title": "Example configurations",
+      "path": "docs/study_case.md",
+      "line": 5,
+      "source_paths": [
+        "docs/study_case.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_case.md#L5",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "orphan: true",
+      "type": "Native lesson / example",
+      "section": "reproduce",
+      "tags": [
+        "native-lesson"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-61a1705804f1",
+      "title": "Good Practices",
+      "path": "docs/study_cases/good_practices.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/good_practices.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/good_practices.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "This page collects insights that come from running EMHASS in production over months: what matters, what doesn't, and what surprises new users. Treat it as the why behind several recommendations scattered across the tutorials and how-to guides.",
+      "type": "Native lesson / example",
+      "section": "reproduce",
+      "tags": [
+        "native-lesson"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-7cde4d9c3be3",
+      "title": "Heat-pump end-to-end walkthrough",
+      "path": "docs/study_cases/heat_pump_walkthrough.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/heat_pump_walkthrough.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/heat_pump_walkthrough.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "This page walks through a complete real-house scenario: PV + electrochemical battery + heat-pump-driven thermal battery + (optionally) a regular EV charger. It is an orchestration page. For the parameter reference of the thermal battery model itself, see Reference: thermal_battery.",
+      "type": "Native lesson / example",
+      "section": "reproduce",
+      "tags": [
+        "model",
+        "native-lesson"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-af3742f6afb7",
+      "title": "Installation Methods",
+      "path": "docs/installation_methods.md",
+      "line": 1,
+      "source_paths": [
+        "docs/installation_methods.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/installation_methods.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "For Home Assistant OS and HA Supervised users, A EMHASS app repository has been developed to allow the EMHASS Docker container to run as a Home Assistant app. The app is more user-friendly as the Home Assistant secrets (URL and API key) are automatically placed inside of the EMHASS container, and web server port (default 5000) is already opened.",
+      "type": "Native reading",
+      "section": "reproduce",
+      "tags": [
+        "reproduction"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-d04d2a2d88d0",
+      "title": "Legacy CLI Commands",
+      "path": "docs/study_cases/legacy_cli.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/legacy_cli.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/legacy_cli.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "The study-case tutorials and how-to guides primarily show REST API calls (curl, rest_command, or the Add-on action button), because the EMHASS Add-on and standalone Docker are the recommended deployment targets and these expose REST.",
+      "type": "Native lesson / example",
+      "section": "reproduce",
+      "tags": [
+        "native-lesson",
+        "reproduction"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-ea104dc0d388",
+      "title": "Quick start: Configuration and Installation",
+      "path": "docs/quick_start.md",
+      "line": 1,
+      "source_paths": [
+        "docs/quick_start.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/quick_start.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "The package is meant to be highly configurable with an object-oriented modular approach and a main configuration file defined by the user.",
+      "type": "Native reading",
+      "section": "reproduce",
+      "tags": [
+        "reproduction"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-1d4d1782ac04",
+      "title": "Usage guide",
+      "path": "docs/usage_guide.md",
+      "line": 1,
+      "source_paths": [
+        "docs/usage_guide.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/usage_guide.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "If using the add-on or the Docker installation, it exposes a simple webserver on port 5000. You can access it directly using your browser. (E.g.: http://localhost:5000)",
+      "type": "Native reading",
+      "section": "reproduce",
+      "tags": [
+        "reproduction"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-1e3f2ff41b05",
+      "title": "📁 Study Cases",
+      "path": "docs/study_cases/index.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/index.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/index.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "End-to-end walkthroughs for common EMHASS configurations using real data.",
+      "type": "Native lesson / example",
+      "section": "reproduce",
+      "tags": [
+        "native-lesson"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-5a40426028aa",
+      "title": "Plan / Optimization Output Schema",
+      "path": "docs/plan_output_schema.md",
+      "line": 1,
+      "source_paths": [
+        "docs/plan_output_schema.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/plan_output_schema.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "This page documents the columns of the optimization-result DataFrame returned by",
+      "type": "Native reading",
+      "section": "verification",
+      "tags": [
+        "verification"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-80b59b29f57f",
+      "title": "Publish data to Home Assistant",
+      "path": "docs/publish_data.md",
+      "line": 1,
+      "source_paths": [
+        "docs/publish_data.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/publish_data.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "publish-data (which is either run manually or automatically via continual_publish or Home Assistant automation), will push the optimization results to Home Assistant for each deferrable load defined in the configuration. For example, if you have defined two deferrable loads, then the command will publish sensor.p_deferrable0 and sensor.p_deferrable1 to Home Assistant. When the dayahead-o…",
+      "type": "Native reading",
+      "section": "verification",
+      "tags": [
+        "native-lesson",
+        "reproduction",
+        "verification"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-6056e440868e",
+      "title": "Reference Configurations",
+      "path": "docs/study_cases/reference_configs.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/reference_configs.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/reference_configs.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "These are anonymized, abstract templates. They are not real users' systems. Each block is a starting point — the parameter values reflect typical hardware in the archetype, but you must verify against your own equipment. See Configuration for the full parameter reference.",
+      "type": "Native lesson / example",
+      "section": "verification",
+      "tags": [
+        "model",
+        "native-lesson"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-bab2364bc91c",
+      "title": "Rolling-horizon control with naive-mpc-optim",
+      "path": "docs/study_cases/mpc.md",
+      "line": 1,
+      "source_paths": [
+        "docs/study_cases/mpc.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/mpc.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "The dayahead-optim action computes a single 24 h schedule once per day. For systems where forecasts and state change throughout the day (especially battery SOC, EV state, dynamic prices), you want Model Predictive Control: re-run the optimization on a rolling window every N minutes, using the latest measurements as the new initial state.",
+      "type": "Native lesson / example",
+      "section": "verification",
+      "tags": [
+        "model",
+        "native-lesson",
+        "verification"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-9abeaa38a976",
+      "title": "Battery-aware runtime params",
+      "path": "docs/cookbook/battery_aware_runtime_params.md",
+      "line": 1,
+      "source_paths": [
+        "docs/cookbook/battery_aware_runtime_params.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/battery_aware_runtime_params.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "Feed live battery state of charge (SOC) back into EMHASS naive-MPC on every call so the optimizer plans against the real current state, not a stale assumption. Avoid the most common consumer bug: SOC unit mismatch (fraction vs percent). After this recipe, every MPC POST your orchestrator sends carries the current soc_init, validated and clamped to your configured bounds.",
+      "type": "Native reading",
+      "section": "scope",
+      "tags": [
+        "scope"
+      ],
+      "track": null,
+      "lesson_id": null
+    },
+    {
+      "id": "doc-90b006a988bc",
+      "title": "🧑‍🍳 Cookbook",
+      "path": "docs/cookbook/index.md",
+      "line": 1,
+      "source_paths": [
+        "docs/cookbook/index.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/cookbook/index.md#L1",
+      "source_revision": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+      "source_kind": "audited-native-source",
+      "source_label": "Source at 93c5579a3bb4",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "Short, standalone, copy-pasteable recipes for common EMHASS patterns. Each recipe follows a fixed template: Goal / Prerequisites / Config / Snippet / Caveats / Credits.",
+      "type": "Native reading",
+      "section": "scope",
+      "tags": [
+        "scope"
+      ],
+      "track": null,
+      "lesson_id": null
+    }
+  ],
+  "commands": [
+    {
+      "command": "uv sync --reinstall --extra test",
+      "label": "Expected environment setup",
+      "path": ".github/workflows/code-quality.yml",
+      "line": 44,
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/code-quality.yml#L44"
+    },
+    {
+      "command": "uv tool install ruff",
+      "label": "Expected environment setup",
+      "path": ".github/workflows/code-quality.yml",
+      "line": 47,
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/code-quality.yml#L47"
+    },
+    {
+      "command": "uv run python -m unittest discover -s .github/tests -v",
+      "label": "Source-defined validation command",
+      "path": ".github/workflows/code-quality.yml",
+      "line": 50,
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/code-quality.yml#L50"
+    },
+    {
+      "command": "docker run --rm --entrypoint '/bin/cat' ${{ steps.build.outputs.imageid }} uv.lock >> ./OSV/${{ matrix.platform.target_arch }}.lock",
+      "label": "Source-defined example command",
+      "path": ".github/workflows/docker-build-test.yaml",
+      "line": 61,
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/docker-build-test.yaml#L61"
+    },
+    {
+      "command": "docker run --rm --entrypoint '/bin/cat' ${{ steps.cache.outputs.imageid }} uv.lock >> ./OSV/${{ matrix.platform.target_arch }}.lock",
+      "label": "Source-defined example command",
+      "path": ".github/workflows/publish_docker-test.yaml",
+      "line": 68,
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/publish_docker-test.yaml#L68"
+    },
+    {
+      "command": "python3 -m pip install --break-system-packages .[test]",
+      "label": "Expected environment setup",
+      "path": ".github/workflows/updatePVLibDB.yaml",
+      "line": 23,
+      "source_url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/.github/workflows/updatePVLibDB.yaml#L23"
+    }
+  ],
+  "engineering_curriculum_exclusions": [],
+  "visuals": {
+    "mapped_diagrams": [],
+    "section_banners": [
+      "section-01-question.svg",
+      "section-02-equations.svg",
+      "section-03-reproduce.svg",
+      "section-04-verification.svg",
+      "section-05-scope.svg"
+    ]
+  },
+  "native_document_banner_insertions": [
+    {
+      "path": "docs/study_cases/basic_pv_battery.md",
+      "section": "question",
+      "section_title": "Question / topology",
+      "banner": "docs/visuals/sections/section-01-question.svg",
+      "markdown_relative_banner": "../visuals/sections/section-01-question.svg",
+      "insert_after_heading": "Basic system — 5 kWp PV, 5 kWh battery, two deferrable loads",
+      "heading_line": 1,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv_battery.md#L1",
+      "reason": "The existing heading 'Basic system — 5 kWp PV, 5 kWh battery, two deferrable loads' matches the question / topology section."
+    },
+    {
+      "path": "docs/study_cases/basic_pv_battery.md",
+      "section": "reproduce",
+      "section_title": "Reproduce / parameters",
+      "banner": "docs/visuals/sections/section-03-reproduce.svg",
+      "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+      "insert_after_heading": "Run",
+      "heading_line": 44,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv_battery.md#L44",
+      "reason": "The existing heading 'Run' matches the reproduce / parameters section."
+    },
+    {
+      "path": "docs/study_cases/basic_pv.md",
+      "section": "question",
+      "section_title": "Question / topology",
+      "banner": "docs/visuals/sections/section-01-question.svg",
+      "markdown_relative_banner": "../visuals/sections/section-01-question.svg",
+      "insert_after_heading": "Basic system — 5 kWp PV, two deferrable loads",
+      "heading_line": 1,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv.md#L1",
+      "reason": "The existing heading 'Basic system — 5 kWp PV, two deferrable loads' matches the question / topology section."
+    },
+    {
+      "path": "docs/study_cases/basic_no_pv.md",
+      "section": "question",
+      "section_title": "Question / topology",
+      "banner": "docs/visuals/sections/section-01-question.svg",
+      "markdown_relative_banner": "../visuals/sections/section-01-question.svg",
+      "insert_after_heading": "Basic system — no PV, two deferrable loads",
+      "heading_line": 1,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_no_pv.md#L1",
+      "reason": "The existing heading 'Basic system — no PV, two deferrable loads' matches the question / topology section."
+    },
+    {
+      "path": "docs/study_cases/basic_no_pv.md",
+      "section": "reproduce",
+      "section_title": "Reproduce / parameters",
+      "banner": "docs/visuals/sections/section-03-reproduce.svg",
+      "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+      "insert_after_heading": "Run the optimization",
+      "heading_line": 38,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_no_pv.md#L38",
+      "reason": "The existing heading 'Run the optimization' matches the reproduce / parameters section."
+    },
+    {
+      "path": "docs/study_cases/dhw_walkthrough.md",
+      "section": "reproduce",
+      "section_title": "Reproduce / parameters",
+      "banner": "docs/visuals/sections/section-03-reproduce.svg",
+      "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+      "insert_after_heading": "Real-world example",
+      "heading_line": 128,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/dhw_walkthrough.md#L128",
+      "reason": "The existing heading 'Real-world example' matches the reproduce / parameters section."
+    },
+    {
+      "path": "docs/study_cases/dhw_walkthrough.md",
+      "section": "scope",
+      "section_title": "Scope / limitations",
+      "banner": "docs/visuals/sections/section-05-scope.svg",
+      "markdown_relative_banner": "../visuals/sections/section-05-scope.svg",
+      "insert_after_heading": "Caveats",
+      "heading_line": 134,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/dhw_walkthrough.md#L134",
+      "reason": "The existing heading 'Caveats' matches the scope / limitations section."
+    },
+    {
+      "path": "docs/study_case.md",
+      "section": "reproduce",
+      "section_title": "Reproduce / parameters",
+      "banner": "docs/visuals/sections/section-03-reproduce.svg",
+      "markdown_relative_banner": "visuals/sections/section-03-reproduce.svg",
+      "insert_after_heading": "Example configurations",
+      "heading_line": 5,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_case.md#L5",
+      "reason": "The existing heading 'Example configurations' matches the reproduce / parameters section."
+    },
+    {
+      "path": "docs/study_cases/good_practices.md",
+      "section": "equations",
+      "section_title": "Equations / provenance",
+      "banner": "docs/visuals/sections/section-02-equations.svg",
+      "markdown_relative_banner": "../visuals/sections/section-02-equations.svg",
+      "insert_after_heading": "1. Forecast quality dominates parameter tuning",
+      "heading_line": 7,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/good_practices.md#L7",
+      "reason": "The existing heading '1. Forecast quality dominates parameter tuning' matches the equations / provenance section."
+    },
+    {
+      "path": "docs/study_cases/heat_pump_walkthrough.md",
+      "section": "reproduce",
+      "section_title": "Reproduce / parameters",
+      "banner": "docs/visuals/sections/section-03-reproduce.svg",
+      "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+      "insert_after_heading": "Heat-pump end-to-end walkthrough",
+      "heading_line": 1,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/heat_pump_walkthrough.md#L1",
+      "reason": "The existing heading 'Heat-pump end-to-end walkthrough' matches the reproduce / parameters section."
+    },
+    {
+      "path": "docs/study_cases/legacy_cli.md",
+      "section": "reproduce",
+      "section_title": "Reproduce / parameters",
+      "banner": "docs/visuals/sections/section-03-reproduce.svg",
+      "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+      "insert_after_heading": "Legacy CLI Commands",
+      "heading_line": 1,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/legacy_cli.md#L1",
+      "reason": "The existing heading 'Legacy CLI Commands' matches the reproduce / parameters section."
+    },
+    {
+      "path": "docs/study_cases/reference_configs.md",
+      "section": "equations",
+      "section_title": "Equations / provenance",
+      "banner": "docs/visuals/sections/section-02-equations.svg",
+      "markdown_relative_banner": "../visuals/sections/section-02-equations.svg",
+      "insert_after_heading": "Note: prediction_horizon is a runtime parameter (passed in the MPC payload),",
+      "heading_line": 20,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/reference_configs.md#L20",
+      "reason": "The existing heading 'Note: prediction_horizon is a runtime parameter (passed in the MPC payload),' matches the equations / provenance section."
+    },
+    {
+      "path": "docs/study_cases/mpc.md",
+      "section": "reproduce",
+      "section_title": "Reproduce / parameters",
+      "banner": "docs/visuals/sections/section-03-reproduce.svg",
+      "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+      "insert_after_heading": "Run",
+      "heading_line": 36,
+      "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/mpc.md#L36",
+      "reason": "The existing heading 'Run' matches the reproduce / parameters section."
+    }
+  ],
+  "native_document_banner_audit": {
+    "schema_version": 1,
+    "eligibility_rule": "Tracked indexed Markdown in an examples, tutorials, lessons, studies, study-cases, concepts or notes directory, or whose path/title explicitly names a lesson, tutorial, example, walkthrough, study case or study. Banners are based only on existing semantic heading text, never directory names.",
+    "eligible_document_count": 12,
+    "lesson_document_candidates": 12,
+    "modified_document_count": 10,
+    "banner_insertion_count": 13,
+    "audit_gap_count": 2,
+    "banners": [
+      {
+        "path": "docs/study_cases/basic_pv_battery.md",
+        "section": "question",
+        "section_title": "Question / topology",
+        "banner": "docs/visuals/sections/section-01-question.svg",
+        "markdown_relative_banner": "../visuals/sections/section-01-question.svg",
+        "insert_after_heading": "Basic system — 5 kWp PV, 5 kWh battery, two deferrable loads",
+        "heading_line": 1,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv_battery.md#L1",
+        "reason": "The existing heading 'Basic system — 5 kWp PV, 5 kWh battery, two deferrable loads' matches the question / topology section."
+      },
+      {
+        "path": "docs/study_cases/basic_pv_battery.md",
+        "section": "reproduce",
+        "section_title": "Reproduce / parameters",
+        "banner": "docs/visuals/sections/section-03-reproduce.svg",
+        "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+        "insert_after_heading": "Run",
+        "heading_line": 44,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv_battery.md#L44",
+        "reason": "The existing heading 'Run' matches the reproduce / parameters section."
+      },
+      {
+        "path": "docs/study_cases/basic_pv.md",
+        "section": "question",
+        "section_title": "Question / topology",
+        "banner": "docs/visuals/sections/section-01-question.svg",
+        "markdown_relative_banner": "../visuals/sections/section-01-question.svg",
+        "insert_after_heading": "Basic system — 5 kWp PV, two deferrable loads",
+        "heading_line": 1,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_pv.md#L1",
+        "reason": "The existing heading 'Basic system — 5 kWp PV, two deferrable loads' matches the question / topology section."
+      },
+      {
+        "path": "docs/study_cases/basic_no_pv.md",
+        "section": "question",
+        "section_title": "Question / topology",
+        "banner": "docs/visuals/sections/section-01-question.svg",
+        "markdown_relative_banner": "../visuals/sections/section-01-question.svg",
+        "insert_after_heading": "Basic system — no PV, two deferrable loads",
+        "heading_line": 1,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_no_pv.md#L1",
+        "reason": "The existing heading 'Basic system — no PV, two deferrable loads' matches the question / topology section."
+      },
+      {
+        "path": "docs/study_cases/basic_no_pv.md",
+        "section": "reproduce",
+        "section_title": "Reproduce / parameters",
+        "banner": "docs/visuals/sections/section-03-reproduce.svg",
+        "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+        "insert_after_heading": "Run the optimization",
+        "heading_line": 38,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/basic_no_pv.md#L38",
+        "reason": "The existing heading 'Run the optimization' matches the reproduce / parameters section."
+      },
+      {
+        "path": "docs/study_cases/dhw_walkthrough.md",
+        "section": "reproduce",
+        "section_title": "Reproduce / parameters",
+        "banner": "docs/visuals/sections/section-03-reproduce.svg",
+        "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+        "insert_after_heading": "Real-world example",
+        "heading_line": 128,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/dhw_walkthrough.md#L128",
+        "reason": "The existing heading 'Real-world example' matches the reproduce / parameters section."
+      },
+      {
+        "path": "docs/study_cases/dhw_walkthrough.md",
+        "section": "scope",
+        "section_title": "Scope / limitations",
+        "banner": "docs/visuals/sections/section-05-scope.svg",
+        "markdown_relative_banner": "../visuals/sections/section-05-scope.svg",
+        "insert_after_heading": "Caveats",
+        "heading_line": 134,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/dhw_walkthrough.md#L134",
+        "reason": "The existing heading 'Caveats' matches the scope / limitations section."
+      },
+      {
+        "path": "docs/study_case.md",
+        "section": "reproduce",
+        "section_title": "Reproduce / parameters",
+        "banner": "docs/visuals/sections/section-03-reproduce.svg",
+        "markdown_relative_banner": "visuals/sections/section-03-reproduce.svg",
+        "insert_after_heading": "Example configurations",
+        "heading_line": 5,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_case.md#L5",
+        "reason": "The existing heading 'Example configurations' matches the reproduce / parameters section."
+      },
+      {
+        "path": "docs/study_cases/good_practices.md",
+        "section": "equations",
+        "section_title": "Equations / provenance",
+        "banner": "docs/visuals/sections/section-02-equations.svg",
+        "markdown_relative_banner": "../visuals/sections/section-02-equations.svg",
+        "insert_after_heading": "1. Forecast quality dominates parameter tuning",
+        "heading_line": 7,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/good_practices.md#L7",
+        "reason": "The existing heading '1. Forecast quality dominates parameter tuning' matches the equations / provenance section."
+      },
+      {
+        "path": "docs/study_cases/heat_pump_walkthrough.md",
+        "section": "reproduce",
+        "section_title": "Reproduce / parameters",
+        "banner": "docs/visuals/sections/section-03-reproduce.svg",
+        "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+        "insert_after_heading": "Heat-pump end-to-end walkthrough",
+        "heading_line": 1,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/heat_pump_walkthrough.md#L1",
+        "reason": "The existing heading 'Heat-pump end-to-end walkthrough' matches the reproduce / parameters section."
+      },
+      {
+        "path": "docs/study_cases/legacy_cli.md",
+        "section": "reproduce",
+        "section_title": "Reproduce / parameters",
+        "banner": "docs/visuals/sections/section-03-reproduce.svg",
+        "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+        "insert_after_heading": "Legacy CLI Commands",
+        "heading_line": 1,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/legacy_cli.md#L1",
+        "reason": "The existing heading 'Legacy CLI Commands' matches the reproduce / parameters section."
+      },
+      {
+        "path": "docs/study_cases/reference_configs.md",
+        "section": "equations",
+        "section_title": "Equations / provenance",
+        "banner": "docs/visuals/sections/section-02-equations.svg",
+        "markdown_relative_banner": "../visuals/sections/section-02-equations.svg",
+        "insert_after_heading": "Note: prediction_horizon is a runtime parameter (passed in the MPC payload),",
+        "heading_line": 20,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/reference_configs.md#L20",
+        "reason": "The existing heading 'Note: prediction_horizon is a runtime parameter (passed in the MPC payload),' matches the equations / provenance section."
+      },
+      {
+        "path": "docs/study_cases/mpc.md",
+        "section": "reproduce",
+        "section_title": "Reproduce / parameters",
+        "banner": "docs/visuals/sections/section-03-reproduce.svg",
+        "markdown_relative_banner": "../visuals/sections/section-03-reproduce.svg",
+        "insert_after_heading": "Run",
+        "heading_line": 36,
+        "source_link": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/study_cases/mpc.md#L36",
+        "reason": "The existing heading 'Run' matches the reproduce / parameters section."
+      }
+    ],
+    "audit_gaps": [
+      {
+        "path": "docs/study_cases/ev.md",
+        "reason": "no existing heading matches a five-color section; retained as a source-linked catalog entry"
+      },
+      {
+        "path": "docs/study_cases/index.md",
+        "reason": "no existing heading matches a five-color section; retained as a source-linked catalog entry"
+      }
+    ],
+    "explicit_exclusions": []
+  },
+  "dashboard": {
+    "browser_lab_is_surrogate": true,
+    "native_execution_in_browser": false,
+    "localStorage_or_existing_dashboard_scripts_preserved": true
+  }
+}

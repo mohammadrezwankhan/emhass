@@ -1,175 +1,156 @@
-<div align="center">
+![Home Energy Automation Lab: original vector system illustration](assets/hero-25d.svg)
 
-<img src="assets/hero-25d.svg" alt="EMHASS: Home Energy Management Optimization 2.5D Architecture" width="100%">
+This fork preserves EMHASS energy optimization, forecasts, and Home Assistant interfaces. A synthetic EV charging exercise explains energy windows and the distinction between a planner and a device executor.
 
-# EMHASS: Home Energy Management Optimization
+**[Native-source lesson guide](docs/portfolio/) · [Offline interactive lab](docs/index.html) · [Lesson configuration](docs/lesson-config.json) · [Configuration schema](docs/lesson-config.schema.json)**
 
-**Home Energy Optimization, Linear Programming & Smart Home Dispatch**
+## Your first interactive result
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-00E5FF.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
-[![Interactive Dashboard](https://img.shields.io/badge/Interactive_Dashboard-Live_on_Pages-00E676.svg?style=for-the-badge&logo=githubpages&logoColor=white)](https://mohammadrezwankhan.github.io/emhass/)
-[![Lessons](https://img.shields.io/badge/Lessons_Configured-04_Modules-B388FF.svg?style=for-the-badge)](docs/lesson-config.json)
+1. Download or clone this repository and open `docs/index.html` in a modern browser.
+2. Select **Module 1**, apply its preset, and compare the declared checkpoint with the plotted result.
+3. Change one slider, inspect the model assumptions, then export the configuration or telemetry for your notes.
 
-<p align="center">
-  <a href="https://mohammadrezwankhan.github.io/emhass/"><strong>Explore Live 2.5D Dashboard &rarr;</strong></a> ·
-  <a href="#quickstart">Quickstart</a> ·
-  <a href="#lesson-configuration-matrix">Lesson Labs</a> ·
-  <a href="#verification-benchmarks">Benchmarks</a> ·
-  <a href="#citation">Citation</a>
-</p>
+The browser lab runs offline with no packages, accounts, or live data feeds. Its numbers are deterministic teaching simulations. Each checkpoint states its model time and tolerance; passing it demonstrates agreement with that model, not field calibration or production readiness.
 
-</div>
+## Four-module learning path
 
----
+| Module | Investigation | Approximate time |
+|---|---|---:|
+| 1. Translate a charging target into stored energy | Relate battery capacity, charge efficiency, power, and a fixed time window. | 12 min |
+| 2. Check the time-window calculation | Determine whether a nominal charging target is reachable within a stated window. | 15 min |
+| 3. Expose the constant-power approximation | Explain how a physical charging taper changes a naive energy-over-power estimate. | 15 min |
+| 4. Reject an infeasible target before automation | Document an energy shortfall and preserve the planner/executor responsibility boundary. | 18 min |
 
-> [!NOTE]
-> **Industrial & Educational Benchmark:** This repository serves as a flagship, peer-reviewed engineering asset developed by **[Mohammad Rezwan Khan](https://github.com/mohammadrezwankhan)**. All models, simulation scripts, and laboratory configurations are strictly audited for numerical convergence, reproducibility, and industrial standard compliance.
+**Who this is for:** Home-energy developers, automation learners, and contributors studying deferrable-load planning.
 
-> [!TIP]
-> **Interactive 2.5D Dashboard:** Visit the companion interactive dashboard hosted directly on GitHub Pages at **[https://mohammadrezwankhan.github.io/emhass/](https://mohammadrezwankhan.github.io/emhass/)** to adjust excitation parameters, test live frequency/thermal waveforms, and inspect progressive lab modules in real time.
+### Continue into the implementation
 
----
+- [README.md](README.md)
+- [LICENSE](LICENSE)
+- [AGENTS.md](AGENTS.md)
+- [pyproject.toml](pyproject.toml)
+- [docs/develop.md](docs/develop.md)
+- [docs/quick_start.md](docs/quick_start.md)
+- [docs/study_cases/ev.md](docs/study_cases/ev.md)
 
-## 🏛️ System Architecture & 2.5D Visual Topology
+### Explore or run the source
 
-The repository is structured across three decoupled layers visually depicted in our 2.5D isometric platform:
-
-1. **Layer 01: Physical & Hardware Boundary Layer**
-   - Encapsulates electrochemical, thermal, and circuit hardware properties (cell chemistry, internal impedance, cooling cold-plate hydraulic dimensions, and transformer ratings).
-2. **Layer 02: Computational & Digital Twin Core**
-   - Solves coupled nonlinear differential equations, Kalman filtering state estimation, and model predictive control optimization algorithms with guaranteed mathematical boundedness.
-3. **Layer 03: Telemetry, Dispatch & Interactive API Layer**
-   - Exposes zero-friction CLI runners, interactive web dashboards, automated GitHub Actions regression verification suites, and production JSON configuration manifests.
-
-```
-       ▲  [LAYER 03: TELEMETRY & DISPATCH]   --> Web Dashboard, REST API, Automated CI
-      / \
-     ▲   ▲ [LAYER 02: NUMERICAL CORE]        --> Differential Solvers, EKF, Optimization
-    / \ / \
-   ▲   ▲   ▲ [LAYER 01: HARDWARE BOUNDS]     --> Equivalent Circuit, Thermal Mesh, Grid POI
-```
-
----
-
-## 🚀 Quickstart
-
-Run the full reproduction test suite locally with zero manual setup:
+Python >=3.10,<3.13 for the native fork. The documented test extra installs its optimization and test dependencies; no hardware is needed for this browser lab.
 
 ```bash
-# Clone the repository
-git clone https://github.com/mohammadrezwankhan/emhass.git
-cd emhass
-
-# Option A: Python Environment
-pip install -r requirements.txt
-python -m unittest discover -s tests -p "*_test.py"
-
-# Option B: Launch Local 2.5D Interactive Dashboard
-cd docs && python -m http.server 8080
-# Open http://localhost:8080 in your browser
+python -m pip install -e ".[test]"
+python -m pytest tests/test_defaults_smoke.py
+python -m pytest tests/test_optimization.py
 ```
 
----
+These commands come from the audited source revision. Runtime requirements and the project's own validation limits are documented below; the standalone browser lab does not execute these commands.
 
-## 📚 Lesson Configuration Matrix
+**Fork provenance.** This repository retains the upstream project and its attribution. [https://github.com/davidusb-geek/emhass](https://github.com/davidusb-geek/emhass) The interactive lab is an additional educational companion; it does not imply upstream endorsement or relicense the existing material.
 
-This repository includes a progressive 4-part industrial lab curriculum. Each lesson provides self-contained parameters, test scripts, and automated telemetry checkpoints stored in [`docs/lesson-config.json`](docs/lesson-config.json).
-
-| Lesson ID | Level | Duration | Module Target | Core Objective |
-| :--- | :--- | :--- | :--- | :--- |
-| **`L01`** | `Beginner` | `30 mins` | `configs/ha_telemetry_config.json` | Home Energy Telemetry Ingestion via Home Assistant REST API |
-| **`L02`** | `Intermediate` | `45 mins` | `configs/forecast_ml_tuning.json` | Day-Ahead Solar Irradiance & Household Load Forecasting |
-| **`L03`** | `Advanced` | `60 mins` | `configs/milp_optimizer.json` | Mixed-Integer Linear Programming (MILP) Dispatch Solver |
-| **`L04`** | `Production` | `60 mins` | `configs/realtime_mpc_rules.json` | Real-Time MPC Dispatch & Automations Hardening |
-
+The detailed project guide below remains the source for installation, supported features, licences, and scientific limits. The browser equations and laboratory settings do not change the original application or numerical engine.
 
 <details>
-<summary><strong>🔍 Click to expand detailed lesson specifications</strong></summary>
-
-### L01: Home Energy Telemetry Ingestion via Home Assistant REST API
-- **Complexity Level:** `Beginner` | **Estimated Time:** `30 mins`
-- **Target File:** `configs/ha_telemetry_config.json`
-- **Objective:** Connect EMHASS daemon to Home Assistant sensors: household power load, solar inverter yield, and utility dynamic price feed.
-- **Key Inputs:** Home Assistant Long-Lived Access Token, Sensor entity IDs
-- **Calibrated Parameters:** `{"PollingInterval_sec": 60, "HistoryLookback_Hours": 48}`
-- **Verification Criteria:**
-  - [x] Validate sensor data availability and unit normalization (Watts to kW)
-  - [x] Test bi-directional command posting to switch entities
-
-### L02: Day-Ahead Solar Irradiance & Household Load Forecasting
-- **Complexity Level:** `Intermediate` | **Estimated Time:** `45 mins`
-- **Target File:** `configs/forecast_ml_tuning.json`
-- **Objective:** Generate 24-hour predictive profiles using weather APIs and machine learning (KNN / Random Forest) trained on historical household usage.
-- **Key Inputs:** Local weather forecast (temperature, cloud cover), Historical power consumption CSV
-- **Calibrated Parameters:** `{"ForecastHorizon_Hours": 24, "ModelType": "Scikit-Learn Regression"}`
-- **Verification Criteria:**
-  - [x] Achieve forecast Mean Absolute Percentage Error (MAPE) < 14%
-  - [x] Plot forecast vs actual consumption envelope
-
-### L03: Mixed-Integer Linear Programming (MILP) Dispatch Solver
-- **Complexity Level:** `Advanced` | **Estimated Time:** `60 mins`
-- **Target File:** `configs/milp_optimizer.json`
-- **Objective:** Solve optimal schedule for EV charging, heat pump heating cycles, and home battery charging to minimize electric bill.
-- **Key Inputs:** Hourly electricity tariff ($/kWh), Solar generation forecast curve
-- **Calibrated Parameters:** `{"HomeBattery_kWh": 10.0, "MaxChargeRate_kW": 3.3, "HeatPump_ThermalStorage_Liters": 300}`
-- **Verification Criteria:**
-  - [x] Charge battery during low/negative price hours
-  - [x] Achieve > 82% household solar self-consumption ratio
-
-### L04: Real-Time MPC Dispatch & Automations Hardening
-- **Complexity Level:** `Production` | **Estimated Time:** `60 mins`
-- **Target File:** `configs/realtime_mpc_rules.json`
-- **Objective:** Run receding-horizon 5-minute MPC loop responding to sudden cloud cover or unexpected cooking stove loads without violating battery limits.
-- **Key Inputs:** Real-time power meter updates, Immediate EV departure overrides
-- **Calibrated Parameters:** `{"RecalculationPeriod_min": 5, "MinBatteryReserve_pct": 20.0}`
-- **Verification Criteria:**
-  - [x] Prevent uncoordinated EV charging tripping main household circuit breaker
-  - [x] Demonstrate 35% lower monthly electric bill
-
-</details>
-
----
-
-## 📊 Verification Benchmarks
-
-| Metric Benchmark | Reference Baseline | Proposed Framework | Improvement | Verification Status |
-| :--- | :--- | :--- | :--- | :--- |
-| Estimation Error (RMSE) | 3.85% | **0.94%** | **-75.5% Error** | Passed CI Automated Suite |
-| Computational Runtime | 142 ms / step | **18 ms / step** | **7.8x Speedup** | Benchmarked on standard x86 |
-| Memory Footprint | 480 MB | **64 MB** | **-86.6% RAM** | Profiled via memory profiler |
-| Numerical Stability Margin | Divergence @ 10 kHz | **Stable to 100 kHz** | **10x Stability Window** | 100,000 Step Monte Carlo Run |
-
----
-
-## 📜 Citation
-
-If you use this repository, its models, or the accompanying interactive 2.5D curriculum in academic or industrial research, please cite:
-
-```bibtex
-@software{khan_emhass,
-  author       = {Mohammad Rezwan Khan},
-  title        = {{EMHASS: Home Energy Management Optimization: Home Energy Optimization, Linear Programming & Smart Home Dispatch}},
-  year         = {2026},
-  publisher    = {GitHub},
-  journal      = {GitHub Repository},
-  howpublished = {\url{https://github.com/mohammadrezwankhan/emhass}}
-}
-```
-
----
-
-## ⭐ Star History
-
-Join our growing community of engineers, researchers, and developers pushing open-source energy storage and computational modeling forward:
+<summary>Project documentation, installation, attribution, and existing validation</summary>
 
 <div align="center">
-  <a href="https://star-history.com/#mohammadrezwankhan/emhass&Date">
-    <img src="https://api.star-history.com/svg?repos=mohammadrezwankhan/emhass&type=Date" alt="Star History Chart" width="80%">
+  <br>
+  <img alt="EMHASS" src="https://raw.githubusercontent.com/davidusb-geek/emhass/master/docs/images/logo_docs.png" width="700px">
+  <h1>Energy Management for Home Assistant</h1>
+  <strong></strong>
+</div>
+<br>
+
+<p align="center">
+  <a style="text-decoration:none" href="https://pypi.org/project/emhass/">
+    <img alt="PyPI - Version" src="https://img.shields.io/pypi/v/emhass">
+  </a>
+  <a style="text-decoration:none" href="https://anaconda.org/channels/davidusb/packages/emhass/overview">
+    <img alt="Conda - Version" src="https://img.shields.io/conda/v/davidusb/emhass">
+  </a>
+  <a style="text-decoration:none" href="https://github.com/davidusb-geek/emhass/actions">
+    <img alt="EMHASS GitHub Workflow Status" src="https://github.com/davidusb-geek/emhass/actions/workflows/publish_docker.yaml/badge.svg?event=release">
+  </a>
+  <a style="text-decoration:none" href="https://github.com/davidusb-geek/emhass/blob/master/LICENSE">
+    <img alt="GitHub" src="https://img.shields.io/github/license/davidusb-geek/emhass">
+  </a>
+  <a style="text-decoration:none" href="https://pypi.org/project/emhass/">
+    <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/emhass">
+  </a>
+  <a style="text-decoration:none" href="https://pypi.org/project/emhass/">
+    <img alt="PyPI - Status" src="https://img.shields.io/pypi/status/emhass">
+  </a>
+  <a style="text-decoration:none" href="https://emhass.readthedocs.io/en/latest/">
+    <img alt="Read the Docs" src="https://img.shields.io/readthedocs/emhass">
+  </a>
+    <a style="text-decoration:none" href="https://codecov.io/github/davidusb-geek/emhass" >
+    <img alt="Upstream EMHASS coverage" src="https://codecov.io/github/davidusb-geek/emhass/branch/master/graph/badge.svg?token=BW7KSCHN90"/>
+  </a>
+  <a style="text-decoration:none" href="https://github.com/davidusb-geek/emhass/actions/workflows/codeql.yml" >
+    <img alt="Upstream EMHASS CodeQL workflow" src="https://github.com/davidusb-geek/emhass/actions/workflows/codeql.yml/badge.svg?branch=master&event=schedule"/>
+  </a>
+  <a style="text-decoration:none" href="https://sonarcloud.io/summary/new_code?id=davidusb-geek_emhass">
+    <img alt="SonarQube security rating" src="https://sonarcloud.io/api/project_badges/measure?project=davidusb-geek_emhass&metric=security_rating">
+  </a>
+  <a style="text-decoration:none" href="https://sonarcloud.io/summary/new_code?id=davidusb-geek_emhass">
+    <img alt="SonarQube security Vulnerabilities" src="https://sonarcloud.io/api/project_badges/measure?project=davidusb-geek_emhass&metric=vulnerabilities">
+  </a>
+  <a style="text-decoration:none" href="https://sonarcloud.io/summary/new_code?id=davidusb-geek_emhass">
+    <img alt="SonarQube reliability" src="https://sonarcloud.io/api/project_badges/measure?project=davidusb-geek_emhass&metric=reliability_rating">
+  </a>
+  <a style="text-decoration:none" href="https://sonarcloud.io/summary/new_code?id=davidusb-geek_emhass">
+    <img alt="SonarQube bugs" src="https://sonarcloud.io/api/project_badges/measure?project=davidusb-geek_emhass&metric=bugs">
+  </a>
+
+</p>
+
+<div align="center">
+ <a style="text-decoration:none" href="https://emhass.readthedocs.io/en/latest/">
+      <img src="https://raw.githubusercontent.com/davidusb-geek/emhass/master/docs/images/Documentation_button.svg" alt="Documentation">
+  </a>
+   <a style="text-decoration:none" href="https://community.home-assistant.io/t/emhass-an-energy-management-for-home-assistant/338126">
+      <img src="https://raw.githubusercontent.com/davidusb-geek/emhass/master/docs/images/Community_button.svg" alt="Community">
+  </a>
+  <a style="text-decoration:none" href="https://github.com/davidusb-geek/emhass/issues">
+      <img src="https://raw.githubusercontent.com/davidusb-geek/emhass/master/docs/images/Issues_button.svg" alt="Issues">
+  </a>
+  <a style="text-decoration:none" href="https://github.com/davidusb-geek/emhass-add-on">
+     <img src="https://raw.githubusercontent.com/davidusb-geek/emhass/master/docs/images/EMHASS_Add_on_button.svg" alt="EMHASS Add-on">
   </a>
 </div>
 
----
-
-<p align="center">
-  Distributed under the MIT License. Built with pride by <a href="https://github.com/mohammadrezwankhan"><strong>Mohammad Rezwan Khan</strong></a>.
+<br>
+<p align="left">
+EMHASS is a Python module designed to optimize your home energy interfacing with Home Assistant.
 </p>
+
+## Introduction
+
+EMHASS (Energy Management for Home Assistant) is an optimization tool designed for residential households. The package uses a Linear Programming approach to optimize energy usage while considering factors such as electricity prices, power generation from solar panels, and energy storage from batteries. EMHASS provides a high degree of configurability, making it easy to integrate with Home Assistant and other smart home systems. Whether you have solar panels, energy storage, or just a controllable load, EMHASS can provide an optimized daily schedule for your devices, allowing you to save money and minimize your environmental impact.
+
+The complete documentation for this package is [available here](https://emhass.readthedocs.io/en/latest/).
+
+To get started you can follow our [🚀 Quick Start](docs/quick_start.md) guide in the documentation.
+
+Here are the guides for:
+
+- [📦 Installation methods](docs/installation_methods.md)
+- [📖 Usage](docs/usage_guide.md)
+- [🤖 Home Assistant Automations](docs/automations.md)
+
+## Development
+
+Pull requests are very much accepted on this project. For development, you can find some instructions here [Development](docs/develop.md).
+
+## License
+
+MIT License
+
+Copyright (c) 2021-2026 David HERNANDEZ TORRES
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+</details>

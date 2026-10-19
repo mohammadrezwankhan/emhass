@@ -1,5 +1,7 @@
 # Heat-pump end-to-end walkthrough
 
+![Section 03 · Reproduce / parameters](../visuals/sections/section-03-reproduce.svg)
+
 > **Type:** How-To Guide — task-oriented, follow when integrating a heat pump as a thermal-battery deferrable in a real home with PV and battery.
 
 This page walks through a complete real-house scenario: PV + electrochemical battery + heat-pump-driven thermal battery + (optionally) a regular EV charger. It is an *orchestration* page. For the parameter reference of the thermal battery model itself, see [Reference: thermal_battery](../thermal_battery.md).

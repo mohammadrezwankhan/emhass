@@ -127,9 +127,13 @@ The `overshoot_temperature` is a hard ceiling: the optimizer will not push the t
 
 ## Real-world example
 
+![Section 03 · Reproduce / parameters](../visuals/sections/section-03-reproduce.svg)
+
 On a 26 April 2026 Tibber-day with spot prices reaching −0.42 EUR/kWh between 13:00 and 14:30, switching from a fixed daily profile (55 °C between 09:00 and 16:00) to the deadline profile (base 45 °C, evening spike 50 °C at 18:00) shifted DHW heating from a morning slot into the 13:00–14:30 negative-price window. Net spread: about 1.70 EUR for the day. Same tank, same demand, only the temperature profile changed.
 
 ## Caveats
+
+![Section 05 · Scope / limitations](../visuals/sections/section-05-scope.svg)
 
 - One heat pump can't do heating and DHW simultaneously. If your unit (e.g. Tecalor THZ, Daikin Altherma, Vaillant aroTHERM) shares a single compressor, EMHASS plans both deferrable loads but the unit's own controller picks priority each minute. Pass `def_current_state[<dhw_slot>] = wpDhwOn` (boolean from your real-world DHW-mode sensor) so the optimizer knows whether DHW is currently active in the first timestep.
 - `cooling_constant` calibration matters. A too-optimistic value (tank cools slowly in the model but fast in reality) leads to "tank not hot enough at deadline" complaints. Start from a measured value: heat tank to 50 °C, log temperature over 24 h with no demand, fit the exponential decay. A 200 L tank in a typical utility room sits around `cooling_constant = 0.02` per hour. If you cannot calibrate, raise `desired_temperature_base` from 45 to 47–48 to give the optimizer more thermal margin.

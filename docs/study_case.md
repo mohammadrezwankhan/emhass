@@ -4,6 +4,8 @@ orphan: true
 
 # Example configurations
 
+![Section 03 · Reproduce / parameters](visuals/sections/section-03-reproduce.svg)
+
 This page has moved. The study cases have been split into a dedicated
 section for better navigation and to support new walkthroughs.
 

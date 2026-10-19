@@ -1,0 +1,6 @@
+{
+  "repository": "emhass",
+  "diagrams": [],
+  "fidelity": {},
+  "reason": "LP-based household dispatch fork; a finite-state policy would misstate its optimizer."
+}

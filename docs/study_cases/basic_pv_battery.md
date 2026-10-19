@@ -1,5 +1,7 @@
 # Basic system — 5 kWp PV, 5 kWh battery, two deferrable loads
 
+![Section 01 · Question / topology](../visuals/sections/section-01-question.svg)
+
 > **Type:** Tutorial — learning-oriented, follow step by step.
 
 This scenario adds a 5 kWh battery to the previous tutorial. The optimizer now schedules battery charge/discharge alongside the deferrable loads.
@@ -40,6 +42,8 @@ battery_target_state_of_charge: 0.6    # default — also used as default soc_in
 For the meaning of each parameter and acceptable ranges, see [Configuration](../config.md).
 
 ## Run
+
+![Section 03 · Reproduce / parameters](../visuals/sections/section-03-reproduce.svg)
 
 ```bash
 curl -i -H "Content-Type: application/json" \

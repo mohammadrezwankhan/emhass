@@ -18,6 +18,8 @@ set_use_pv: true
 solar_forecast_kwp: 10
 optimization_time_step: 30
 # Note: prediction_horizon is a runtime parameter (passed in the MPC payload),
+
+![Section 02 · Equations / provenance](../visuals/sections/section-02-equations.svg)
 # not a static config field. With this 30-min step a 24 h horizon is 48 timesteps.
 
 set_use_battery: true
