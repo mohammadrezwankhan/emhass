@@ -1,0 +1,90 @@
+{
+  "repository": "emhass",
+  "domain": "DOMAIN_B",
+  "title": "EMHASS: Home Energy Management Optimization",
+  "version": "2.0.0",
+  "author": "Mohammad Rezwan Khan",
+  "lessons": [
+    {
+      "id": "L01",
+      "title": "Home Energy Telemetry Ingestion via Home Assistant REST API",
+      "level": "Beginner",
+      "duration": "30 mins",
+      "config_file": "configs/ha_telemetry_config.json",
+      "summary": "Connect EMHASS daemon to Home Assistant sensors: household power load, solar inverter yield, and utility dynamic price feed.",
+      "inputs": [
+        "Home Assistant Long-Lived Access Token",
+        "Sensor entity IDs"
+      ],
+      "parameters": {
+        "PollingInterval_sec": 60,
+        "HistoryLookback_Hours": 48
+      },
+      "checkpoints": [
+        "Validate sensor data availability and unit normalization (Watts to kW)",
+        "Test bi-directional command posting to switch entities"
+      ]
+    },
+    {
+      "id": "L02",
+      "title": "Day-Ahead Solar Irradiance & Household Load Forecasting",
+      "level": "Intermediate",
+      "duration": "45 mins",
+      "config_file": "configs/forecast_ml_tuning.json",
+      "summary": "Generate 24-hour predictive profiles using weather APIs and machine learning (KNN / Random Forest) trained on historical household usage.",
+      "inputs": [
+        "Local weather forecast (temperature, cloud cover)",
+        "Historical power consumption CSV"
+      ],
+      "parameters": {
+        "ForecastHorizon_Hours": 24,
+        "ModelType": "Scikit-Learn Regression"
+      },
+      "checkpoints": [
+        "Achieve forecast Mean Absolute Percentage Error (MAPE) < 14%",
+        "Plot forecast vs actual consumption envelope"
+      ]
+    },
+    {
+      "id": "L03",
+      "title": "Mixed-Integer Linear Programming (MILP) Dispatch Solver",
+      "level": "Advanced",
+      "duration": "60 mins",
+      "config_file": "configs/milp_optimizer.json",
+      "summary": "Solve optimal schedule for EV charging, heat pump heating cycles, and home battery charging to minimize electric bill.",
+      "inputs": [
+        "Hourly electricity tariff ($/kWh)",
+        "Solar generation forecast curve"
+      ],
+      "parameters": {
+        "HomeBattery_kWh": 10.0,
+        "MaxChargeRate_kW": 3.3,
+        "HeatPump_ThermalStorage_Liters": 300
+      },
+      "checkpoints": [
+        "Charge battery during low/negative price hours",
+        "Achieve > 82% household solar self-consumption ratio"
+      ]
+    },
+    {
+      "id": "L04",
+      "title": "Real-Time MPC Dispatch & Automations Hardening",
+      "level": "Production",
+      "duration": "60 mins",
+      "config_file": "configs/realtime_mpc_rules.json",
+      "summary": "Run receding-horizon 5-minute MPC loop responding to sudden cloud cover or unexpected cooking stove loads without violating battery limits.",
+      "inputs": [
+        "Real-time power meter updates",
+        "Immediate EV departure overrides"
+      ],
+      "parameters": {
+        "RecalculationPeriod_min": 5,
+        "MinBatteryReserve_pct": 20.0
+      },
+      "checkpoints": [
+        "Prevent uncoordinated EV charging tripping main household circuit breaker",
+        "Demonstrate 35% lower monthly electric bill"
+      ]
+    }
+  ]
+}
