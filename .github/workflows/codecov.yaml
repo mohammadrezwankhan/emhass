@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      CODECOV_CONFIGURED: ${{ secrets.CODECOV_TOKEN != '' }}
+      SONAR_CONFIGURED: ${{ secrets.SONAR_TOKEN != '' }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
@@ -36,8 +39,24 @@ jobs:
           uv run coverage report
           uv run coverage xml -o coverage.xml
 
+      - name: Preserve coverage report on GitHub
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: coverage-${{ github.sha }}
+          path: coverage.xml
+          if-no-files-found: error
+
+      - name: Report external coverage service configuration
+        run: |
+          if [ "$CODECOV_CONFIGURED" != "true" ]; then
+            echo 'Codecov upload is not configured: CODECOV_TOKEN is absent. Coverage remains available in the GitHub artifact.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "$SONAR_CONFIGURED" != "true" ] || [ "$GITHUB_REPOSITORY" != "davidusb-geek/emhass" ]; then
+            echo 'The upstream SonarCloud project is not used by this fork or an unconfigured run. Native tests and coverage generation remain required.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: Upload coverage reports to Codecov
-        if: github.event.pull_request.head.repo.fork == false
+        if: env.CODECOV_CONFIGURED == 'true' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false)
         uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -46,7 +65,7 @@ jobs:
           verbose: true
 
       - name: SonarQube Scan
-        if: github.event.pull_request.head.repo.fork == false
+        if: env.SONAR_CONFIGURED == 'true' && github.repository == 'davidusb-geek/emhass' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false)
         uses: SonarSource/sonarqube-scan-action@c7ee0f9df90b7aa20e8dcf9695dcfe2e7da5b4f2 # v7
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
