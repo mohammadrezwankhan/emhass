@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "repository": "emhass",
+  "preserved_current_commit": "d9d0135d3b545357ad2f7038c6b3d2cd72d141e7",
+  "animations": [
+    {
+      "kind": "image",
+      "title": "Original floating-layer SVG",
+      "badge": "Earlier animated media",
+      "description": "Floating isometric tiers, pulsing circuits, and flowing dashed traces from the earlier repository hero.",
+      "format": "Animated SVG",
+      "preview": "media/hero-25d-5c1824802c3a.svg",
+      "preview_sha256": "c4a4e407173f11d4accfc846d3f4fb5df244fb1ec3d828dc009acf7e9b9b2e86",
+      "motion_identity": "5c1824802c3a9b2e55621f86b992e85590573aa9523af8f0f2c2770e9d92e8ce",
+      "sources": [
+        {
+          "path": "assets/hero-25d.svg",
+          "commit": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+          "sha256": "b046d7320dd1d813c50f0352d4c55ec48e138bc3f7ca5122d07493f2426602a1",
+          "blob": "0c4248f39ea26442d9891df5a5c4d8a4d75b6992",
+          "url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/assets/hero-25d.svg"
+        },
+        {
+          "path": "assets/hero-25d.svg",
+          "commit": "bff0e0fac0a38cde0b96358047ab5101c26c095b",
+          "sha256": "e28789bac201ab1afb0bb1c1350492b78687067e8ce63776f3f8204d7709323c",
+          "blob": "c260c0a03ef82f93ba718dff4aa2482b44744543",
+          "url": "https://github.com/mohammadrezwankhan/emhass/blob/bff0e0fac0a38cde0b96358047ab5101c26c095b/assets/hero-25d.svg"
+        }
+      ]
+    },
+    {
+      "kind": "waveform",
+      "title": "Original interactive waveform",
+      "badge": "Previous dashboard animation",
+      "description": "The earlier 2.5D perspective card and its moving waveform, with the original visual formulas and sliders.",
+      "preview": "waveform.html",
+      "preview_sha256": "fa1aab2ad941e311008fc2e18f90971bf48903dc773f88e667fa699f5ef05b7b",
+      "sources": [
+        {
+          "path": "docs/index.html",
+          "commit": "93c5579a3bb48ff7351ae8f8b46534df23feccab",
+          "blob": "4294fe5731757af785ab9a877fe891a2fe7d7093",
+          "sha256": "7501c8c981d2cf354abee8fda2ddf0304130152b42ee4f698e277a2f19337c53",
+          "url": "https://github.com/mohammadrezwankhan/emhass/blob/93c5579a3bb48ff7351ae8f8b46534df23feccab/docs/index.html"
+        },
+        {
+          "path": "docs/index.html",
+          "commit": "bff0e0fac0a38cde0b96358047ab5101c26c095b",
+          "blob": "d62faa5b4cd0d7339b23c99a385850638133c146",
+          "sha256": "7fb80602cd54e008ad34ca6396503686f8bf238b1e4190590df816a32bcc16e6",
+          "url": "https://github.com/mohammadrezwankhan/emhass/blob/bff0e0fac0a38cde0b96358047ab5101c26c095b/docs/index.html"
+        }
+      ]
+    }
+  ],
+  "native_links": [],
+  "historical_source_links": []
+}
